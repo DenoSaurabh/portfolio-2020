@@ -13,6 +13,7 @@ const BlogsPage = () => (
   <AboutPageS>
     <Head>
       <title>about - denosaurabh</title>
+      <meta name="about denosaurabh" content="All about denosaurabh, how he think and design."/>
     </Head>
     <NeueUBoldMediumSmallText
       style={{

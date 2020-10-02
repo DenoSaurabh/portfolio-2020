@@ -25,6 +25,7 @@ const ProjectsPage = () => (
   <ProjectsPageS>
     <Head>
       <title>projects - denosaurabh</title>
+      <meta name="denosaurabh projects" content="Projects made by denosaurabh"/>
     </Head>
     <NeueUBoldMediumSmallText
       style={{

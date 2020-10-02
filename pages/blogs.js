@@ -20,6 +20,7 @@ const BlogsPage = () => (
   <BlogsPageS>
     <Head>
       <title>blogs - denosaurabh</title>
+      <meta name="denosaurabh blogs" content="All medium blogs posts of denosauabh."/>
     </Head>
     <NeueUBoldMediumSmallText>
       <Link href="/">denosaurabh.</Link>

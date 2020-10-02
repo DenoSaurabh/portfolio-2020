@@ -24,6 +24,10 @@ const SkillsPage = () => (
   <SkillsPageS>
     <Head>
       <title>skills - denosaurabh</title>
+      <meta
+        name="denosaurabh"
+        content="Most skill set of denosaurabh, from front-end development, back-end development to design."
+      />
     </Head>
     <NeueUBoldMediumSmallText
       style={{
