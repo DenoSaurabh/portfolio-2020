@@ -1,4 +1,4 @@
-import ProjectHOC from '../../components/project-hoc/project-hoc.comp';
+import ProjectHOC from '../../components/project-hoc/project-hoc';
 
 const Trello = () => (
   <ProjectHOC

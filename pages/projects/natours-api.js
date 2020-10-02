@@ -1,4 +1,4 @@
-import ProjectHOC from '../../components/project-hoc/project-hoc.comp';
+import ProjectHOC from '../../components/project-hoc/project-hoc';
 
 const NatoursAPI = () => (
   <ProjectHOC
@@ -18,7 +18,12 @@ const NatoursAPI = () => (
     Error Handling :D. This was a humangous project.
     <br /> <br />
     Docs url for API if you want:
-    https://documenter.getpostman.com/view/8055041/SztJzjD1
+    <a
+      href="https://documenter.getpostman.com/view/8055041/SztJzjD1"
+      target="_blank"
+    >
+      <u>https://documenter.getpostman.com/view/8055041/SztJzjD1</u>
+    </a>
   </ProjectHOC>
 );
 

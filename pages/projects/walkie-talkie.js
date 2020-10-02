@@ -1,11 +1,11 @@
-import ProjectHOC from '../../components/project-hoc/project-hoc.comp';
+import ProjectHOC from '../../components/project-hoc/project-hoc';
 
 const WalkieTalkie = () => (
   <ProjectHOC
     title="Walkie Talkie"
     nextAppName="Trello Hotel"
     nextAppURL="trello"
-    imgName="walkie-talkie-vue"
+    imgName="walkie-talkie"
     githubLink="https://github.com/DenoSaurabh/walkie-talkie"
     projectLink="https://walkie-talkie-d2910.web.app/#/"
   >

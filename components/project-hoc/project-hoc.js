@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 
 import {
   ProjectInfoPageS,
@@ -11,7 +12,6 @@ import {
 import {
   AquireSecondaryHeading,
   NeueUBoldMediumSmallText,
-  NeueLightSmallText,
   NeueLightMiniText,
 } from '../../styles/typography';
 
@@ -25,6 +25,9 @@ const ProjectHOC = ({
   projectLink,
 }) => (
   <ProjectInfoPageS>
+    <Head>
+      <title>{title}</title>
+    </Head>
     <NeueUBoldMediumSmallText
       style={{
         width: '100%',
@@ -35,9 +38,9 @@ const ProjectHOC = ({
       <Link href="/projects"> denosaurabh. </Link>
       {nextAppName ? (
         <Link href={`/projects/${nextAppURL}`}>
-            <NeueLightMiniText>
-              <u>{nextAppName}</u>
-            </NeueLightMiniText>
+            <u>
+              <a>{nextAppName}</a>
+            </u>
         </Link>
       ) : null}
     </NeueUBoldMediumSmallText>

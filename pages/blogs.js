@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 
 import {
   BlogsPageS,
@@ -17,6 +18,9 @@ import {
 
 const BlogsPage = () => (
   <BlogsPageS>
+    <Head>
+      <title>blogs - denosaurabh</title>
+    </Head>
     <NeueUBoldMediumSmallText>
       <Link href="/">denosaurabh.</Link>
     </NeueUBoldMediumSmallText>

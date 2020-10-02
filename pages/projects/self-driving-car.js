@@ -1,9 +1,9 @@
-import ProjectHOC from '../../components/project-hoc/project-hoc.comp';
+import ProjectHOC from '../../components/project-hoc/project-hoc';
 
 const SelfDrivingCar = () => (
   <ProjectHOC
     title="Self Driving Car"
-    imgName="self-driving-car-app"
+    imgName="self-driving-car"
     githubLink="https://github.com/DenoSaurabh/self-driving-car-webapp"
     projectLink="https://self-driving-car-webapp.netlify.app/"
   >

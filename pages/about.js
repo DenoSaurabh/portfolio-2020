@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 
 import { AboutPageS, AboutContent, SmallBoldText } from '../styles/pages/about';
 
@@ -10,6 +11,9 @@ import {
 
 const BlogsPage = () => (
   <AboutPageS>
+    <Head>
+      <title>about - denosaurabh</title>
+    </Head>
     <NeueUBoldMediumSmallText
       style={{
         width: '100%',

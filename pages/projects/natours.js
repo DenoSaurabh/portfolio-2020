@@ -1,11 +1,11 @@
-import ProjectHOC from '../../components/project-hoc/project-hoc.comp';
+import ProjectHOC from '../../components/project-hoc/project-hoc';
 
 const Natours = () => (
   <ProjectHOC
     title="Natours"
     nextAppName="Self Driving Car"
     nextAppURL="self-driving-car"
-    imgName="natours-web"
+    imgName="natours"
     githubLink="https://github.com/DenoSaurabh/natours-sass.github.io"
     projectLink="https://denosaurabh.github.io/natours-sass.github.io/"
   >

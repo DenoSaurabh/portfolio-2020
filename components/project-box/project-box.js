@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import {
   NeueTertiaryHeading,
   NeueLightMiniText,
@@ -9,9 +11,18 @@ import {
   ProjectIMG,
 } from '../../styles/components/project-box';
 
-const ProjectBox = ({ imgName, title, children }) => (
+const ProjectBox = ({ imgName, title, children, projectUrl }) => (
   <ProjectBoxS>
-    <ProjectIMG src={`/assets/img/projects/${imgName}.png`} alt={imgName} />
+    <Link
+      href={
+        projectUrl.includes('https://') ? projectUrl : `projects/${projectUrl}`
+      }
+    >
+      <a>
+        <ProjectIMG src={`/assets/img/projects/${imgName}.png`} alt={imgName} />
+      </a>
+    </Link>
+
     <InlineStyle>
       <NeueTertiaryHeading>{title}</NeueTertiaryHeading>
       <NeueLightMiniText>{children}</NeueLightMiniText>

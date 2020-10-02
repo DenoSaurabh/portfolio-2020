@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 
 import {
   ProjectsPageS,
@@ -22,6 +23,9 @@ import ProjectBox from '../components/project-box/project-box';
 
 const ProjectsPage = () => (
   <ProjectsPageS>
+    <Head>
+      <title>projects - denosaurabh</title>
+    </Head>
     <NeueUBoldMediumSmallText
       style={{
         width: '100%',
@@ -39,7 +43,11 @@ const ProjectsPage = () => (
     <AquireSecondaryHeading>Projects</AquireSecondaryHeading>
     <BigProjectsContent>
       <CRWNApp>
-        <ProjectIMG src="/assets/img/projects/crwnapp.png" alt="crwn-app" />
+        <Link href="/projects/crwn-app">
+          <a>
+            <ProjectIMG src="/assets/img/projects/crwnapp.png" alt="crwn-app" />
+          </a>
+        </Link>
         <InlineStyle>
           <NeueTertiaryHeading>CRWN Project</NeueTertiaryHeading>
           <NeueLightMiniText>
@@ -48,10 +56,14 @@ const ProjectsPage = () => (
         </InlineStyle>
       </CRWNApp>
       <NatoursAPI>
-        <ProjectIMG
-          src="/assets/img/projects/natours-api.png"
-          alt="natours-api"
-        />
+        <Link href="/projects/natours-api">
+          <a>
+            <ProjectIMG
+              src="/assets/img/projects/natours-api.png"
+              alt="natours-api"
+            />
+          </a>
+        </Link>
         <InlineStyle>
           <NeueTertiaryHeading>Natours API</NeueTertiaryHeading>
           <NeueLightMiniText>
@@ -62,16 +74,24 @@ const ProjectsPage = () => (
       </NatoursAPI>
     </BigProjectsContent>
     <SmallProjectsContent>
-      <ProjectBox imgName="walkie-talkie" title="Walkie Talkie">
+      <ProjectBox
+        imgName="walkie-talkie"
+        title="Walkie Talkie"
+        projectUrl="walkie-talkie"
+      >
         is a real-time chat application project made with vue, firebase.
       </ProjectBox>
-      <ProjectBox imgName="natours" title="Natours">
+      <ProjectBox imgName="natours" title="Natours" projectUrl="natours">
         is a design project made with SASS and advance concepts of css.
       </ProjectBox>
-      <ProjectBox imgName="trello" title="Trello Hotel">
+      <ProjectBox imgName="trello" title="Trello Hotel" projectUrl="trello">
         is a design project powered with Advance CSS and Flexbox.
       </ProjectBox>
-      <ProjectBox imgName="self-driving-car" title="Self Driving Car">
+      <ProjectBox
+        imgName="self-driving-car"
+        title="Self Driving Car"
+        projectUrl="self-driving-car"
+      >
         is a personal project I made for a science/tech exibition.
       </ProjectBox>
     </SmallProjectsContent>
@@ -82,21 +102,37 @@ const ProjectsPage = () => (
       programming, let’s check out :D
     </NeueLightMiniText>
     <SmallProjectsContent>
-      <ProjectBox imgName="card-game" title="Card Game">
+      <ProjectBox
+        imgName="card-game"
+        title="Card Game"
+        projectUrl="https://heuristic-goldwasser-31429c.netlify.app"
+      >
         is my old javascript project I made to refine my programming knowledge.
       </ProjectBox>
-      <ProjectBox imgName="stone-paper-scissor" title="Stone Paper Scissor">
+      <ProjectBox
+        imgName="stone-paper-scissor"
+        title="Stone Paper Scissor"
+        projectUrl="https://thirsty-heisenberg-ba589f.netlify.app/"
+      >
         is a design project made with SASS and advance concepts of css. is my
         first ReactJS project I made, even before I learned the Course.
       </ProjectBox>
-      <ProjectBox imgName="portfolio-1" title="Portfolio 1.0">
+      <ProjectBox
+        imgName="portfolio-1"
+        title="Portfolio 1.0"
+        projectUrl="https://portfolio-u6s9.onrender.com/"
+      >
         is my first portfolio I made last year.
       </ProjectBox>
-      <ProjectBox imgName="notes-app" title="Notes App">
+      <ProjectBox
+        imgName="notes-app"
+        title="Notes App"
+        projectUrl="https://github.com/DenoSaurabh/notes-app"
+      >
         is my move to make classic notes app with HTML, CSS and JS to refine my
         programming knowledge in early days.
       </ProjectBox>
-      <ProjectBox imgName="quiz-app" title="Quiz App">
+      <ProjectBox imgName="quiz-app" title="Quiz App" projectUrl="">
         is also a HTML, CSS and JS project in my early days. This was very
         deliberation for me.
       </ProjectBox>
