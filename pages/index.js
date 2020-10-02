@@ -10,7 +10,12 @@ export default function Home() {
   return (
     <div className="page">
       <Head>
-        <title> denosaurabh </title> <link rel="icon" href="/favicon.ico" />
+        <title> denosaurabh </title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="denosaurabh"
+          content="denosaurabh portfolio, developer and designer."
+        />
       </Head>
       <HomePageS>
         <Header />
