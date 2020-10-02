@@ -1,0 +1,21 @@
+// Neue Fonts
+@font-face {
+    font-family: 'Neue-light';
+    src: local('Neue'), url(/assets/fonts/neue/NeueMachina-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Neue-bold';
+    src: local('Neue'), url(/assets/fonts/neue/NeueMachina-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Neue-ultrabold';
+    src: local('Neue'), url(/assets/fonts/neue/NeueMachina-Ultrabold.otf) format('opentype');
+}
+
+// Aquire Font
+@font-face {
+    font-family: 'Aquire-bold';
+    src: local('Aquire'), url(/assets/fonts/aquire/Aquire-bold.otf) format('opentype');
+}

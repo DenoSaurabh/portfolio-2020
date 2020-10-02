@@ -1,0 +1,85 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 60%;
+
+  width: 100%;
+  height: 100vh;
+
+  @media only screen and (max-width: 37.5em) {
+    font-size: 56.25%;
+  }
+
+  ; //600px
+
+  @media only screen and (max-width: 56.25em) {
+    font-size: 50%;
+  }
+
+  ; //900px
+
+  @media only screen and (max-width: 32.25em) {
+    font-size: 40%;
+  }
+
+  ; //400px (approx..)
+
+  @media only screen and (max-width: 23.65em) {
+    font-size: 36%;
+  }
+
+  ; //380px
+
+  @media only screen and (min-width: 156.25em) {
+    font-size: 80%;
+  }
+
+  ; //2500
+
+  overflow-x: hidden;
+
+}
+
+body,
+#__next,
+.page {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #F1EEEE;
+
+  padding: 4rem;
+
+  @media (max-width: 700px) {
+    padding: 3rem;
+  }
+
+  // cursor: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.cursor {
+  width: 50px;
+  height: 50px;
+
+  border: 1px solid #000;
+  border-radius: 50%;
+
+  position: absolute;
+}
