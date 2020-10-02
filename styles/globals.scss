@@ -43,7 +43,6 @@ html {
   ; //2500
 
   overflow-x: hidden;
-
 }
 
 body,
@@ -61,17 +60,11 @@ body {
   @media (max-width: 700px) {
     padding: 3rem;
   }
-
-  // cursor: none;
 }
 
 a {
   color: #000;
   text-decoration: none;
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 
 .cursor {

@@ -21,10 +21,29 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <html lang="en-us">
         <Head>
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}
+
+          <meta charset="utf-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=6"
+          />
+          <meta name="description" content="Description" />
+          <meta name="keywords" content="Keywords" />
+          <title>denosaurabh - pwa</title>
+
+          <link rel="manifest" href="/manifest.json" />
+          <link
+            href="/favicon.ico"
+            rel="icon"
+            type="image/x-icon"
+            sizes="16x16"
+          />
+          <meta name="theme-color" content="#317EFB" />
         </Head>
         <body>
           <Main />

@@ -12,22 +12,23 @@ import {
 } from '../../styles/components/project-box';
 
 const ProjectBox = ({ imgName, title, children, projectUrl }) => (
-  <ProjectBoxS>
-    <Link
-      href={
-        projectUrl.includes('https://') ? projectUrl : `projects/${projectUrl}`
-      }
-    >
+    <ProjectBoxS>
+        <Link
+    href={
+      projectUrl.includes('https://') ? projectUrl : `projects/${projectUrl}`
+    }
+  >
+
       <a>
         <ProjectIMG src={`/assets/img/projects/${imgName}.png`} alt={imgName} />
       </a>
-    </Link>
+      </Link>
 
-    <InlineStyle>
-      <NeueTertiaryHeading>{title}</NeueTertiaryHeading>
-      <NeueLightMiniText>{children}</NeueLightMiniText>
-    </InlineStyle>
-  </ProjectBoxS>
+      <InlineStyle>
+        <NeueTertiaryHeading>{title}</NeueTertiaryHeading>
+        <NeueLightMiniText>{children}</NeueLightMiniText>
+      </InlineStyle>
+    </ProjectBoxS>
 );
 
 export default ProjectBox;
