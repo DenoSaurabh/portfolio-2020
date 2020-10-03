@@ -32,8 +32,7 @@ export default class MyDocument extends Document {
             name="viewport"
             content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=6"
           />
-          <meta name="description" content="Description" />
-          <meta name="keywords" content="Keywords" />
+          <meta name="denosaurabh" content="denosaurabh developer portolio" />
           <title>denosaurabh - pwa</title>
 
           <link rel="manifest" href="/manifest.json" />
@@ -45,7 +44,7 @@ export default class MyDocument extends Document {
           />
           <meta name="theme-color" content="#317EFB" />
         </Head>
-        <body ref="bodyRef">
+        <body>
           <Main />
           <NextScript />
         </body>

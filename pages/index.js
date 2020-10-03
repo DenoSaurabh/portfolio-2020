@@ -6,6 +6,7 @@ import { AquirePrimaryHeading, NeueLightSmallText } from '../styles/typography';
 
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
+import CustomCursor from '../components/cursor/CustomCursor';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
           content="denosaurabh portfolio, developer and designer."
         />
       </Head>
+      <CustomCursor />
       <HomePageS>
         <Header />
         <ContentS>

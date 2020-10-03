@@ -14,33 +14,23 @@ html {
 
   @media only screen and (max-width: 37.5em) {
     font-size: 56.25%;
-  }
-
-  ; //600px
+  } //600px
 
   @media only screen and (max-width: 56.25em) {
     font-size: 50%;
-  }
-
-  ; //900px
+  } //900px
 
   @media only screen and (max-width: 32.25em) {
     font-size: 40%;
-  }
-
-  ; //400px (approx..)
+  } //400px (approx..)
 
   @media only screen and (max-width: 23.65em) {
     font-size: 36%;
-  }
-
-  ; //380px
+  } //380px
 
   @media only screen and (min-width: 156.25em) {
     font-size: 80%;
-  }
-
-  ; //2500
+  } //2500
 
   overflow-x: hidden;
 }
@@ -53,9 +43,11 @@ body,
 }
 
 body {
-  background-color: #F1EEEE;
+  background-color: #f1eeee;
 
   padding: 4rem;
+
+  cursor: none !important;
 
   @media (max-width: 700px) {
     padding: 3rem;
@@ -65,6 +57,8 @@ body {
 a {
   color: #000;
   text-decoration: none;
+
+  cursor: none;
 }
 
 .cursor {
