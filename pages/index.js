@@ -1,7 +1,6 @@
 import Head from 'next/head';
-import { motion } from 'framer-motion';
 
-import { HomePageS, ContentS } from '../styles/pages/Home';
+import { HomePageS, ContentS } from '../styles/pages/home';
 import { AquirePrimaryHeading, NeueLightSmallText } from '../styles/typography';
 
 import Header from '../components/header/header';
