@@ -9,7 +9,7 @@ const ProjectMediaQuery = `
 `;
 
 export const ProjectBoxS = styled(motion.div)`
-  flex: 50% 300px 40%;
+  flex: 40%;
 
   height: 40rem;
 

@@ -14,6 +14,8 @@ import {
 } from '../../styles/components/project-box';
 
 const ProjectBox = ({ imgName, title, children, projectUrl }) => {
+  const [imgHovered, setImgHovered] = useState(false);
+
   return (
     <ProjectBoxS
       initial={{ opacity: 0, y: 10 }}
@@ -29,8 +31,9 @@ const ProjectBox = ({ imgName, title, children, projectUrl }) => {
       >
         <a>
           <ProjectIMG
-            initial={{ filter: 'grayscale(100%)' }}
-            whileHover={{ filter: 'grayscale(0%)' }}
+            onHoverStart={() => setImgHovered(true)}
+            onHoverEnd={() => setImgHovered(false)}
+            whileHover={{ backgroundPosition: 'top' }}
             whileTap={{ scale: 0.95 }}
             src={`/assets/img/projects/${imgName}.png`}
             alt={imgName}
@@ -39,8 +42,18 @@ const ProjectBox = ({ imgName, title, children, projectUrl }) => {
       </Link>
 
       <InlineStyle>
-        <NeueTertiaryHeading>{title}</NeueTertiaryHeading>
-        <NeueLightMiniText>{children}</NeueLightMiniText>
+        <NeueTertiaryHeading
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: imgHovered ? 1 : 0, y: imgHovered ? 0 : 10 }}
+        >
+          {title}
+        </NeueTertiaryHeading>
+        <NeueLightMiniText
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: imgHovered ? 1 : 0, y: imgHovered ? 0 : 10 }}
+        >
+          {children}
+        </NeueLightMiniText>
       </InlineStyle>
     </ProjectBoxS>
   );

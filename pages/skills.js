@@ -55,51 +55,92 @@ const SkillsPage = () => (
     >
       <TopContent>
         <LeftContent>
-          <NeueSecondaryHeading>
+          <NeueSecondaryHeading
+            initial={{ x: -300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1, ease: 'easeOut', duration: 0.7 }}
+          >
             01 <br /> FRONTEND DEVELOPER.
           </NeueSecondaryHeading>
-          <NeueSecondaryHeading>
+          <NeueSecondaryHeading
+            initial={{ x: -300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1.15, ease: 'easeOut', duration: 0.7 }}
+          >
             02 <br /> BACKEND DEVELOPER.
           </NeueSecondaryHeading>
-          <NeueSecondaryHeading>
+          <NeueSecondaryHeading
+            initial={{ x: -300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1.3, ease: 'easeOut', duration: 0.7 }}
+          >
             03 <br /> UI/UX DESIGNER.
           </NeueSecondaryHeading>
         </LeftContent>
         <RightContent>
           <SkillsBox>
-            <NeueLightMiniText>HTML5</NeueLightMiniText>
-            <NeueLightMiniText>CSS3</NeueLightMiniText>
-            <NeueLightMiniText>JavaScript</NeueLightMiniText>
-            <NeueLightMiniText>TypeScript</NeueLightMiniText>
-            <NeueLightMiniText>ReactJS & Redux</NeueLightMiniText>
-            <NeueLightMiniText>Firebase</NeueLightMiniText>
-            <NeueLightMiniText>GraphQL</NeueLightMiniText>
-            <NeueLightMiniText>VueJS</NeueLightMiniText>
+            {[
+              'HTML5',
+              'CSS3',
+              'JavaScript',
+              'React & Redux',
+              'Firebase',
+              'GraphQL',
+              'VueJS',
+              'NextJS',
+            ].map((el, i) => (
+              <NeueLightMiniText
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1 + 0.3 * i }}
+                key={i}
+              >
+                {el}
+              </NeueLightMiniText>
+            ))}
           </SkillsBox>
           <SkillsBox>
-            <NeueLightMiniText>SASS</NeueLightMiniText>
-            <NeueLightMiniText>Styled Components</NeueLightMiniText>
-            <NeueLightMiniText>
-              Responsive <br /> Design & Images
-            </NeueLightMiniText>
-            <NeueLightMiniText>
-              CSS <br /> Flexbox & Grid
-            </NeueLightMiniText>
-            <NeueLightMiniText>Figma</NeueLightMiniText>
-            <NeueLightMiniText>Sketching</NeueLightMiniText>
-            <NeueLightMiniText>Wireframe</NeueLightMiniText>
-            <NeueLightMiniText>Prototype</NeueLightMiniText>
+            {[
+              'SASS',
+              'Styled Components',
+              `Responsive Design & Images`,
+              `CSS Flexbox & Grid`,
+              'Figma',
+              'Sketching',
+              'Wireframing',
+              'Prototyping',
+            ].map((el, i) => (
+              <NeueLightMiniText
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1 + 0.3 * i }}
+                key={i}
+              >
+                {el}
+              </NeueLightMiniText>
+            ))}
           </SkillsBox>
           <SkillsBox>
-            <NeueLightMiniText>NodeJS</NeueLightMiniText>
-            <NeueLightMiniText>Express</NeueLightMiniText>
-            <NeueLightMiniText>MongoDB</NeueLightMiniText>
-            <NeueLightMiniText>Mongoose</NeueLightMiniText>
-            <NeueLightMiniText>Stripe</NeueLightMiniText>
-            <NeueLightMiniText>GCP</NeueLightMiniText>
-            <NeueLightMiniText>Docker</NeueLightMiniText>
-            <NeueLightMiniText>NPM</NeueLightMiniText>
-            <NeueLightMiniText>Deployment</NeueLightMiniText>
+            {[
+              'NodeJS',
+              'Express',
+              `MongoDB`,
+              `Mongoose`,
+              'Stripe',
+              'GCP',
+              'Docker',
+              'NPM',
+              'Deployment',
+            ].map((el, i) => (
+              <NeueLightMiniText
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1 + 0.3 * i }}
+                key={i}
+              >
+                {el}
+              </NeueLightMiniText>
+            ))}
           </SkillsBox>
         </RightContent>
       </TopContent>
