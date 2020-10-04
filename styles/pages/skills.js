@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const SkillsPageS = styled.div`
   width: 100%;
   height: 100%;
 `;
 
-export const SkillsPageContent = styled.div`
+export const SkillsPageContent = styled(motion.div)`
   width: 100%;
   height: fit-content;
 
@@ -39,7 +40,7 @@ export const BottomContent = styled.div`
   h3 {
     margin: 2rem 0;
   }
-  
+
   @media (max-width: 420px) {
     padding-left: 2rem;
   }

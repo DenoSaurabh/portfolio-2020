@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const AboutPageS = styled.div`
   width: 100%;
   height: 100%;
 `;
 
-export const AboutContent = styled.div`
+export const AboutContent = styled(motion.div)`
   width: 80%;
   height: fit-content;
 

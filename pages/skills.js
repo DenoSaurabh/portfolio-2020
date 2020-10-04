@@ -20,6 +20,8 @@ import {
   NeueLightMiniText,
 } from '../styles/typography';
 
+import CustomCursor from '../components/cursor/CustomCursor';
+
 const SkillsPage = () => (
   <SkillsPageS>
     <Head>
@@ -29,6 +31,7 @@ const SkillsPage = () => (
         content="Most skill set of denosaurabh, from front-end development, back-end development to design."
       />
     </Head>
+    <CustomCursor />
     <NeueUBoldMediumSmallText
       style={{
         width: '100%',
@@ -44,7 +47,12 @@ const SkillsPage = () => (
       </Link>
     </NeueUBoldMediumSmallText>
     <AquireSecondaryHeading>Skills</AquireSecondaryHeading>
-    <SkillsPageContent>
+    <SkillsPageContent
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <TopContent>
         <LeftContent>
           <NeueSecondaryHeading>

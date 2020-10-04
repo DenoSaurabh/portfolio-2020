@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const HomePageS = styled.div`
   width: 100%;
@@ -10,11 +11,11 @@ export const HomePageS = styled.div`
   grid-template-columns: 1fr;
 `;
 
-export const ContentS = styled.div`
+export const ContentS = styled(motion.div)`
   grid-row: 2 / 3;
   grid-column: 1 / 2;
 
-  img,
+  .black-hole,
   h3 {
     position: absolute;
     top: 45%;
@@ -37,8 +38,7 @@ export const ContentS = styled.div`
     }
   }
 
-  img {
-    width: 70%;
+  .black-hole {
     min-width: 1000px;
   }
 

@@ -15,6 +15,8 @@ import {
   NeueLightMiniText,
 } from '../../styles/typography';
 
+import CustomCursor from '../cursor/CustomCursor'
+
 const ProjectHOC = ({
   children,
   title,
@@ -28,6 +30,7 @@ const ProjectHOC = ({
     <Head>
       <title>{title}</title>
     </Head>
+    <CustomCursor />
     <NeueUBoldMediumSmallText
       style={{
         width: '100%',

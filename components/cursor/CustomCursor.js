@@ -24,7 +24,13 @@ const CustomCursor = () => {
   }, []);
   return (
     <>
-      <Cursor ref={cursor} className="cursor" />
+      <Cursor
+        ref={cursor}
+        intial={{ width: '16px', height: '16px' }}
+        animate={{ width: '32px', height: '32px' }}
+        transition={{ duration: 1, ease: 'easeOut' }}
+        className="cursor"
+      />
     </>
   );
 };

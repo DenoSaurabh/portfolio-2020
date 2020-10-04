@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 // Snippets
 export const InlineStyle = styled.div`
@@ -13,7 +14,7 @@ export const InlineStyle = styled.div`
   }
 `;
 
-export const ProjectsPageS = styled.div`
+export const ProjectsPageS = styled(motion.div)`
   width: 100%;
   height: fit-content;
 

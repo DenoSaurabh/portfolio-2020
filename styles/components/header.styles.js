@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const HeaderS = styled.div`
   width: 100%;
@@ -13,7 +14,7 @@ export const HeaderS = styled.div`
   }
 `;
 
-export const SocialBox = styled.div`
+export const SocialBox = styled(motion.div)`
   width: 40%;
 
   margin: 0 15% 0 auto;
@@ -21,4 +22,6 @@ export const SocialBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  color: grey;
 `;

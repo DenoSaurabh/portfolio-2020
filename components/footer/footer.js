@@ -6,7 +6,11 @@ import { FooterS } from '../../styles/components/footer.styles';
 import { NeueUBoldSmallText } from '../../styles/typography';
 
 const Footer = () => (
-  <FooterS>
+  <FooterS
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 1.5 }}
+  >
     <Link href="/projects">
       <a>
         <NeueUBoldSmallText className="link-projects">

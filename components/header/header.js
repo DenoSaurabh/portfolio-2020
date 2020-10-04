@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import { HeaderS, SocialBox } from '../../styles/components/header.styles';
 
@@ -13,7 +14,11 @@ const Header = () => {
   return (
     <HeaderS>
       <NeueUBoldMediumSmallText>denosaurabh.</NeueUBoldMediumSmallText>
-      <SocialBox>
+      <SocialBox
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+      >
         <NeueLightMiniText>
           <Link href="mailto:denosaurabh@gmail.com?subject=Hello Deno!">
             <a>Gmail</a>
@@ -40,7 +45,13 @@ const Header = () => {
           </Link>
         </NeueLightMiniText>
       </SocialBox>
-      <NeueUBoldSmallText>2020</NeueUBoldSmallText>
+      <NeueUBoldSmallText
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+      >
+        2020
+      </NeueUBoldSmallText>
     </HeaderS>
   );
 };

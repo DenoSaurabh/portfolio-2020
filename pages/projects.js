@@ -20,13 +20,23 @@ import {
 } from '../styles/typography';
 
 import ProjectBox from '../components/project-box/project-box';
+import CustomCursor from '../components/cursor/CustomCursor';
 
 const ProjectsPage = () => (
-  <ProjectsPageS>
+  <ProjectsPageS
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.5 }}
+  >
     <Head>
       <title>projects - denosaurabh</title>
-      <meta name="denosaurabh projects" content="Projects made by denosaurabh"/>
+      <meta
+        name="denosaurabh projects"
+        content="Projects made by denosaurabh"
+      />
     </Head>
+    <CustomCursor />
     <NeueUBoldMediumSmallText
       style={{
         width: '100%',

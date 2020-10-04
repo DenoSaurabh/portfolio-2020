@@ -16,17 +16,28 @@ import {
   NeueLightMiniText,
 } from '../styles/typography';
 
+import CustomCursor from '../components/cursor/CustomCursor';
+
 const BlogsPage = () => (
   <BlogsPageS>
     <Head>
       <title>blogs - denosaurabh</title>
-      <meta name="denosaurabh blogs" content="All medium blogs posts of denosauabh."/>
+      <meta
+        name="denosaurabh blogs"
+        content="All medium blogs posts of denosauabh."
+      />
     </Head>
+    <CustomCursor />
     <NeueUBoldMediumSmallText>
       <Link href="/">denosaurabh.</Link>
     </NeueUBoldMediumSmallText>
     <AquireSecondaryHeading>Blogs</AquireSecondaryHeading>
-    <SmallProjectsContent>
+    <SmallProjectsContent
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <ProjectBox>
         <ProjectIMG
           src="/assets/img/blogs/mongodb-realm.png"

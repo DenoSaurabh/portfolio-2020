@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 // Snippets
 export const InlineStyle = styled.div`
@@ -25,7 +26,7 @@ const ProjectMediaQuery = `
     }
 `;
 
-export const SmallProjectsContent = styled.div`
+export const SmallProjectsContent = styled(motion.div)`
   height: fit-content;
 
   margin-top: 6rem;

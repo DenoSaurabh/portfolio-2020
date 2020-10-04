@@ -14,23 +14,33 @@ html {
 
   @media only screen and (max-width: 37.5em) {
     font-size: 56.25%;
-  } //600px
+  }
+
+  //600px
 
   @media only screen and (max-width: 56.25em) {
     font-size: 50%;
-  } //900px
+  }
+
+  //900px
 
   @media only screen and (max-width: 32.25em) {
     font-size: 40%;
-  } //400px (approx..)
+  }
+
+  //400px (approx..)
 
   @media only screen and (max-width: 23.65em) {
     font-size: 36%;
-  } //380px
+  }
+
+  //380px
 
   @media only screen and (min-width: 156.25em) {
     font-size: 80%;
-  } //2500
+  }
+
+  //2500
 
   overflow-x: hidden;
 }
@@ -54,19 +64,20 @@ body {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  overflow: hidden;
+}
+
 a {
   color: #000;
   text-decoration: none;
 
   cursor: none;
-}
-
-.cursor {
-  width: 50px;
-  height: 50px;
-
-  border: 1px solid #000;
-  border-radius: 50%;
-
-  position: absolute;
 }

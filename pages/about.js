@@ -9,12 +9,18 @@ import {
   NeueLightMiniText,
 } from '../styles/typography';
 
+import CustomCursor from '../components/cursor/CustomCursor';
+
 const BlogsPage = () => (
   <AboutPageS>
     <Head>
       <title>about - denosaurabh</title>
-      <meta name="about denosaurabh" content="All about denosaurabh, how he think and design."/>
+      <meta
+        name="about denosaurabh"
+        content="All about denosaurabh, how he think and design."
+      />
     </Head>
+    <CustomCursor />
     <NeueUBoldMediumSmallText
       style={{
         width: '100%',
@@ -30,7 +36,12 @@ const BlogsPage = () => (
       </Link>
     </NeueUBoldMediumSmallText>
     <AquireSecondaryHeading>About</AquireSecondaryHeading>
-    <AboutContent>
+    <AboutContent
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <NeueLightMiniText style={{ marginBottom: '30px' }}>
         Hi, I am Saurabh. I’m a self taught Frontend developer, backend
         developer and UI/UX designer. I love to create amazing beautiful web
