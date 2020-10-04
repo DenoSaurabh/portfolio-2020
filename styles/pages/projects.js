@@ -34,7 +34,7 @@ export const ProjectsPageS = styled(motion.div)`
   }
 `;
 
-export const BigProjectsContent = styled.div`
+export const BigProjectsContent = styled(motion.div)`
   margin-top: 12rem;
 
   width: 100%;

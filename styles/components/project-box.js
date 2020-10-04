@@ -14,6 +14,8 @@ export const ProjectBoxS = styled(motion.div)`
   height: 40rem;
 
   margin: 5rem;
+
+  overflow: hidden;
 `;
 
 export const ProjectIMG = styled(motion.img)`

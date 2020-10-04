@@ -13,14 +13,14 @@ import {
   ProjectIMG,
 } from '../../styles/components/project-box';
 
-const ProjectBox = ({ imgName, title, children, projectUrl }) => {
+const ProjectBox = ({ imgName, title, children, projectUrl, i }) => {
   const [imgHovered, setImgHovered] = useState(false);
 
   return (
     <ProjectBoxS
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1.3 }}
     >
       <Link
         href={
@@ -31,9 +31,16 @@ const ProjectBox = ({ imgName, title, children, projectUrl }) => {
       >
         <a>
           <ProjectIMG
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.7,
+              delay: 1.3 + 0.15 * i,
+              ease: 'linear',
+            }}
             onHoverStart={() => setImgHovered(true)}
             onHoverEnd={() => setImgHovered(false)}
-            whileHover={{ backgroundPosition: 'top' }}
+            whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.95 }}
             src={`/assets/img/projects/${imgName}.png`}
             alt={imgName}

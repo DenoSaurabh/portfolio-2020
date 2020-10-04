@@ -35,6 +35,8 @@ export const NeuePrimaryHeading = styled(motion.h3)`
 export const NeueSecondaryHeading = styled(motion.h3)`
   font-family: 'Neue-ultrabold';
   font-size: 4rem;
+
+  line-height: 4rem;
 `;
 
 export const NeueTertiaryHeading = styled(motion.h3)`

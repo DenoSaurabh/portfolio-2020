@@ -145,14 +145,47 @@ const SkillsPage = () => (
         </RightContent>
       </TopContent>
       <BottomContent>
-        <NeueLightSmallText>
+        <NeueLightSmallText
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1.05 }}
+        >
           not only those, every single app made by me has great focus on :
         </NeueLightSmallText>
-        <NeuePrimaryHeading>PERFORMANCE</NeuePrimaryHeading>
-        <NeuePrimaryHeading>ERROR HANDLING</NeuePrimaryHeading>
-        <NeuePrimaryHeading>SECURITY</NeuePrimaryHeading>
-        <NeuePrimaryHeading>ACCESSIBILITY</NeuePrimaryHeading>
-        <NeueLightSmallText>
+        <NeuePrimaryHeading
+          initial={{ x: -300, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 1.15, ease: 'easeOut', duration: 0.7 }}
+        >
+          PERFORMANCE
+        </NeuePrimaryHeading>
+        <NeuePrimaryHeading
+          initial={{ x: -300, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 1.15, ease: 'easeOut', duration: 0.7 }}
+        >
+          ERROR HANDLING
+        </NeuePrimaryHeading>
+        <NeuePrimaryHeading
+          initial={{ x: -300, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 1.15, ease: 'easeOut', duration: 0.7 }}
+        >
+          SECURITY
+        </NeuePrimaryHeading>
+        <NeuePrimaryHeading
+          initial={{ x: -300, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 1.15, ease: 'easeOut', duration: 0.7 }}
+        >
+          ACCESSIBILITY
+        </NeuePrimaryHeading>
+        <NeueLightSmallText
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5, delay: 1.3 }}
+        >
           If you want exactly these kinds of apps, you are in right place
           :thumbs_up:. let’s talk
         </NeueLightSmallText>

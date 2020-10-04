@@ -89,19 +89,26 @@ const ProjectsPage = () => (
         imgName="walkie-talkie"
         title="Walkie Talkie"
         projectUrl="walkie-talkie"
+        i={1}
       >
         is a real-time chat application project made with vue, firebase.
       </ProjectBox>
-      <ProjectBox imgName="natours" title="Natours" projectUrl="natours">
+      <ProjectBox imgName="natours" title="Natours" projectUrl="natours" i={2}>
         is a design project made with SASS and advance concepts of css.
       </ProjectBox>
-      <ProjectBox imgName="trello" title="Trello Hotel" projectUrl="trello">
+      <ProjectBox
+        imgName="trello"
+        title="Trello Hotel"
+        projectUrl="trello"
+        i={3}
+      >
         is a design project powered with Advance CSS and Flexbox.
       </ProjectBox>
       <ProjectBox
         imgName="self-driving-car"
         title="Self Driving Car"
         projectUrl="self-driving-car"
+        i={4}
       >
         is a personal project I made for a science/tech exibition.
       </ProjectBox>
