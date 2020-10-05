@@ -21,6 +21,7 @@
     "prettier": "^2.1.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "recoil": "0.0.13",
     "sass": "^1.26.11",
     "styled-components": "^5.2.0"
   }

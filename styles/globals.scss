@@ -81,3 +81,15 @@ a {
 
   cursor: none;
 }
+
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #fff;
+  background: #343333;
+}
+
+::selection {
+  color: #fff;
+  background: #343333;
+}

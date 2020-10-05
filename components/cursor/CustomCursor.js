@@ -1,37 +1,58 @@
 import React, { useEffect, useRef } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
-import { Cursor } from '../../styles/components/customCursor';
+import { Cursor, CursorBox } from '../../styles/components/customCursor';
+import { NeueLightMiniText } from '../../styles/typography';
+
+import { useCursor } from '../../state/cursor.recoil';
 
 const CustomCursor = () => {
+  const { cursorStatus } = useCursor();
+
   const cursor = useRef(null);
 
   const onMouseMove = (event) => {
-    console.log('mouse moving!');
-
     const { clientX, clientY } = event;
     cursor.current.style.left = `${clientX}px`;
     cursor.current.style.top = `${clientY}px`;
   };
 
-  console.log('CustomCursor!');
-
   useEffect(() => {
-    console.log('on Effect');
     document.addEventListener('mousemove', onMouseMove);
     return () => {
       document.removeEventListener('mousemove', onMouseMove);
     };
   }, []);
+
+  console.log(cursorStatus);
+
   return (
-    <>
-      <Cursor
-        ref={cursor}
-        intial={{ width: '16px', height: '16px' }}
-        animate={{ width: '32px', height: '32px' }}
-        transition={{ duration: 1, ease: 'easeOut' }}
-        className="cursor"
-      />
-    </>
+    <CursorBox ref={cursor} className="cursor">
+      <Cursor />
+      <AnimatePresence>
+        {cursorStatus ? (
+          <NeueLightMiniText
+            key={1}
+            initial={{
+              translateX: '30%',
+              translateY: '-50%',
+              opacity: 0,
+              right: cursorStatus.alignment === 'left' ? `45rem` : '0',
+            }}
+            animate={{
+              translateX: '0%',
+              translateY: '-50%',
+              opacity: 1,
+              boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.03)',
+            }}
+            transition={{ delay: 0.1 }}
+            exit={{ translateY: '-150%', opacity: 0 }}
+          >
+            {cursorStatus.text}
+          </NeueLightMiniText>
+        ) : null}
+      </AnimatePresence>
+    </CursorBox>
   );
 };
 

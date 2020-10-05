@@ -1,5 +1,4 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 
 import {

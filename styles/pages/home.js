@@ -40,11 +40,15 @@ export const ContentS = styled(motion.div)`
 
   .black-hole {
     min-width: 1000px;
+
+    user-select: none;
+    -moz-user-select: none;
   }
 
   h3 {
-    // letter-spacing: 10rem;
-    // margin-right: -10rem;
     color: white;
+
+    user-select: none;
+    -moz-user-select: none;
   }
 `;
