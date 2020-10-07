@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-export const AboutPageS = styled.div`
+export const AboutPageS = styled(motion.div)`
   width: 100%;
   height: fit-content;
 `;
@@ -37,12 +37,12 @@ export const RightContent = styled(motion.div)`
   height: 100%;
 `;
 
-export const SmallBoldText = styled.b`
+export const SmallBoldText = styled(motion.b)`
   display: block;
   margin: 15px 0;
 `;
 
-export const ChatsBox = styled.div`
+export const ChatsBox = styled(motion.div)`
   width: 100%;
   height: fit-content;
 

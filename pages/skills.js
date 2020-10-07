@@ -25,6 +25,32 @@ import CustomCursor from '../components/cursor/CustomCursor';
 
 import { useCursor } from '../state/cursor.recoil';
 
+const easing = [0.6, -0.05, 0.01, 0.99];
+
+const fadeFromLeft = {
+  initial: {
+    x: -300,
+    opacity: 0,
+  },
+  animate: (i) => ({
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 1 + i * 0.15,
+      duration: 0.7,
+      ease: 'easeOut',
+    },
+  }),
+};
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 1,
+    },
+  },
+};
+
 const SkillsPage = () => {
   const { updateCursorStatus } = useCursor();
 
@@ -33,7 +59,12 @@ const SkillsPage = () => {
   }, []);
 
   return (
-    <SkillsPageS>
+    <SkillsPageS
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ delay: 1 }}
+    >
       <Head>
         <title>skills - denosaurabh</title>
         <meta
@@ -57,38 +88,39 @@ const SkillsPage = () => {
         </Link>
       </NeueUBoldMediumSmallText>
       <AquireSecondaryHeading>Skills</AquireSecondaryHeading>
-      <SkillsPageContent
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+      <SkillsPageContent>
         <TopContent>
-          <LeftContent>
+          <LeftContent variants={stagger}>
             <NeueSecondaryHeading
-              initial={{ x: -300, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 1, ease: 'easeOut', duration: 0.7 }}
+              initial="initial"
+              animate="animate"
+              custom={1}
+              key="1"
+              variants={fadeFromLeft}
             >
               01 <br /> FRONTEND DEVELOPER.
             </NeueSecondaryHeading>
             <NeueSecondaryHeading
-              initial={{ x: -300, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 1.15, ease: 'easeOut', duration: 0.7 }}
+              initial="initial"
+              animate="animate"
+              custom={2}
+              key="2"
+              variants={fadeFromLeft}
             >
               02 <br /> BACKEND DEVELOPER.
             </NeueSecondaryHeading>
             <NeueSecondaryHeading
-              initial={{ x: -300, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 1.3, ease: 'easeOut', duration: 0.7 }}
+              initial="initial"
+              animate="animate"
+              custom={3}
+              key="3"
+              variants={fadeFromLeft}
             >
               03 <br /> UI/UX DESIGNER.
             </NeueSecondaryHeading>
           </LeftContent>
           <RightContent>
-            <SkillsBox>
+            <SkillsBox variants={stagger}>
               {[
                 'HTML5',
                 'CSS3',

@@ -61,17 +61,20 @@ const BlogsPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.5, delay: 0.7 }}
+        transition={{ duration: 0., delay: 1 }}
       >
         <LeftContent>
           <NeueLightMiniText style={{ marginBottom: '30px' }}>
             Hi, I am Saurabh. I’m a self taught Frontend developer, backend
-            developer and UI/UX designer. I love to create amazing beautiful web
-            apps & mobile apps. The goal is to create fast, scalable,
-            performant, accessible web apps with outstanding UI/UX. I try to
-            think out of the box for new & innovate ideas that can solve gobal
-            problems with amazing knowledge and technologies. I expetise is
-            around web technologies. Other then this, I love playing &nbsp;
+            developer and UI/UX designer. I love to create delightful web
+            experiences. My goal is to create fast, scalable, performant,
+            accessible web apps with outstanding UI/UX. I try to think out of
+            the box for new & innovate ideas that can solve gobal problems with
+            my knowledge and thinking. I am always hungry to learn more! I
+            believe my diverse experience and passion gives me a unique edge as
+            it allow me to deliberately make complex apps with new technologies.
+            My expetise is around web technologies. Other then this, I love
+            playing &nbsp;
             <motion.span
               onHoverStart={() =>
                 updateCursorStatus({
@@ -158,7 +161,8 @@ const BlogsPage = () => {
           <b>
             <NeueLightMiniText>
               get a cup of coffee and let's have a chit-chat, I will never miss
-              some great ideas!
+              some great ideas! If the idea is great I can even research more on
+              it as well throw some tips to you for free :D
             </NeueLightMiniText>
           </b>
           <br />

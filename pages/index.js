@@ -26,7 +26,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1, delay: 1.5 }}
+          key="homepage"
         >
           <motion.img
             initial={{ width: '50px', zIndex: 1000, opacity: 0 }}
@@ -36,7 +36,13 @@ export default function Home() {
             alt="black-hole"
             className="black-hole"
           />
-          <AquirePrimaryHeading>Saurabh</AquirePrimaryHeading>
+          <AquirePrimaryHeading
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5 }}
+          >
+            Saurabh
+          </AquirePrimaryHeading>
           <NeueLightSmallText
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

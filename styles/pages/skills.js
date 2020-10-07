@@ -13,7 +13,7 @@ export const SkillsPageContent = styled(motion.div)`
   margin-top: 10rem;
 `;
 
-export const TopContent = styled.div`
+export const TopContent = styled(motion.div)`
   width: 100%;
   height: fit-content;
 
@@ -46,7 +46,7 @@ export const BottomContent = styled.div`
   }
 `;
 
-export const LeftContent = styled.div`
+export const LeftContent = styled(motion.div)`
   height: fit-content;
   width: 45%;
   min-width: 300px;
@@ -69,7 +69,7 @@ export const RightContent = styled.div`
   justify-content: space-between;
 `;
 
-export const SkillsBox = styled.div`
+export const SkillsBox = styled(motion.div)`
   width: 120px;
   min-width: 100px;
   height: fit-content;
