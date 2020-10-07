@@ -24,8 +24,6 @@ const CustomCursor = () => {
     };
   }, []);
 
-  console.log(cursorStatus);
-
   return (
     <CursorBox ref={cursor} className="cursor">
       <Cursor />

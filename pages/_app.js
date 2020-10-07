@@ -8,7 +8,7 @@ import '../styles/fonts.scss';
 function MyApp({ Component, pageProps }) {
   return (
     <RecoilRoot>
-      <AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} />
       </AnimatePresence>
     </RecoilRoot>

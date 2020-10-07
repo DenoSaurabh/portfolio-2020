@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { isMobile } from 'react-device-detect';
 
 import {
   NeueTertiaryHeading,
@@ -50,13 +51,21 @@ const ProjectBox = ({ imgName, title, children, projectUrl, i }) => {
       <InlineStyle>
         <NeueTertiaryHeading
           initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: imgHovered ? 1 : 0, y: imgHovered ? 0 : 10 }}
+          animate={
+            isMobile
+              ? { opacity: 1, y: 0 }
+              : { opacity: imgHovered ? 1 : 0, y: imgHovered ? 0 : 10 }
+          }
         >
           {title}
         </NeueTertiaryHeading>
         <NeueLightMiniText
           initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: imgHovered ? 1 : 0, y: imgHovered ? 0 : 10 }}
+          animate={
+            isMobile
+              ? { opacity: 1, y: 0 }
+              : { opacity: imgHovered ? 1 : 0, y: imgHovered ? 0 : 10 }
+          }
         >
           {children}
         </NeueLightMiniText>

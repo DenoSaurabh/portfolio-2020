@@ -11,6 +11,8 @@ html {
 
   width: 100%;
   height: 100vh;
+  
+  scroll-behavior: smooth;
 
   @media only screen and (max-width: 37.5em) {
     font-size: 56.25%;
@@ -82,7 +84,6 @@ a {
   cursor: none;
 }
 
-
 ::-moz-selection {
   /* Code for Firefox */
   color: #fff;
@@ -92,4 +93,24 @@ a {
 ::selection {
   color: #fff;
   background: #343333;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #343333;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #222;
 }
