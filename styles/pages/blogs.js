@@ -14,11 +14,6 @@ export const InlineStyle = styled.div`
   }
 `;
 
-export const BlogsPageS = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
 const ProjectMediaQuery = `
     @media (max-width: 470px) {
         min-width: 300px;

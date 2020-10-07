@@ -1,85 +1,66 @@
 import Link from 'next/link';
-import Head from 'next/head';
+import { GraphQLClient } from 'graphql-request';
 
 import {
-  BlogsPageS,
   ProjectIMG,
   InlineStyle,
   SmallProjectsContent,
   ProjectBox,
 } from '../styles/pages/blogs';
 
-import {
-  AquireSecondaryHeading,
-  NeueUBoldMediumSmallText,
-  NeueTertiaryHeading,
-  NeueLightMiniText,
-} from '../styles/typography';
+import { NeueLightMiniText } from '../styles/typography';
 
-import CustomCursor from '../components/cursor/CustomCursor';
+import Page from '../components/page-hoc/page-hoc';
 
-const BlogsPage = () => (
-  <BlogsPageS>
-    <Head>
-      <title>blogs - denosaurabh</title>
-      <meta
-        name="denosaurabh blogs"
-        content="All medium blogs posts of denosauabh."
-      />
-    </Head>
-    <CustomCursor />
-    <NeueUBoldMediumSmallText>
-      <Link href="/">denosaurabh.</Link>
-    </NeueUBoldMediumSmallText>
-    <AquireSecondaryHeading>Blogs</AquireSecondaryHeading>
-    <SmallProjectsContent
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <ProjectBox>
-        <ProjectIMG
-          src="/assets/img/blogs/mongodb-realm.png"
-          alt="mongodb-realm"
-        />
-        <InlineStyle>
-          <NeueTertiaryHeading>MongoDB Realm</NeueTertiaryHeading>
-          <NeueLightMiniText>
-            is a brand new product by MongoDB and it is very exciting
-            backend-as-a-service.
-          </NeueLightMiniText>
-        </InlineStyle>
-      </ProjectBox>
-      <ProjectBox>
-        <ProjectIMG
-          src="/assets/img/blogs/mongodb-atlas.png"
-          alt="mongodb-atlas"
-        />
-        <InlineStyle>
-          <NeueTertiaryHeading>MongoDB Atlas</NeueTertiaryHeading>
-          <NeueLightMiniText>
-            let’s find out what’s new in MongoDB Atlas in 2020.
-          </NeueLightMiniText>
-        </InlineStyle>
-      </ProjectBox>
-      <ProjectBox>
-        <ProjectIMG
-          src="/assets/img/blogs/authentication.png"
-          alt="authentication"
-        />
-        <InlineStyle>
-          <NeueTertiaryHeading>
-            Future Authentication Techniques
-          </NeueTertiaryHeading>
-          <NeueLightMiniText>
-            is a blogs consists information about 5 Future and New
-            Authentication Techniques.
-          </NeueLightMiniText>
-        </InlineStyle>
-      </ProjectBox>
+const BlogsPage = ({ blogs }) => (
+  <Page
+    id="blogs"
+    title="Blogs"
+    metaName="denosaurabh blogs"
+    metaDe="denosaurabh portfolio medium blogs"
+  >
+    <SmallProjectsContent>
+      {blogs.map((el) => (
+        <Link href={el.blogUrl}>
+          <ProjectBox key={el.id}>
+            <ProjectIMG src={el.img.url} alt={el.img.fileName} />
+            <InlineStyle>
+              <NeueTertiaryHeading>{el.title}</NeueTertiaryHeading>
+              <NeueLightMiniText>{el.smallDescription} </NeueLightMiniText>
+            </InlineStyle>
+          </ProjectBox>
+        </Link>
+      ))}
     </SmallProjectsContent>
-  </BlogsPageS>
+  </Page>
 );
+
+export async function getStaticProps() {
+  const graphcms = new GraphQLClient(
+    'https://api-eu-central-1.graphcms.com/v2/ckdb531gn4tu501z8cx2788ol/master'
+  );
+
+  const { blogs } = await graphcms.request(`
+      { 
+        blogs {
+            blogUrl
+            smallDescription
+            title
+            id
+            img {
+              fileName
+              url
+            }
+          }
+        }
+      }
+  `);
+
+  return {
+    props: {
+      blogs,
+    },
+  };
+}
 
 export default BlogsPage;

@@ -33,7 +33,13 @@ const SkillsPage = () => {
   }, []);
 
   return (
-    <SkillsPageS>
+    <SkillsPageS
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.7 }}
+      key="skills"
+    >
       <Head>
         <title>skills - denosaurabh</title>
         <meta
@@ -61,7 +67,7 @@ const SkillsPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
       >
         <TopContent>
           <LeftContent>

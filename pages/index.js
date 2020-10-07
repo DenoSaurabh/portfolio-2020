@@ -27,6 +27,7 @@ export default function Home() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1, delay: 1.5 }}
+          key="home"
         >
           <motion.img
             initial={{ width: '50px', zIndex: 1000, opacity: 0 }}

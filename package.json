@@ -11,6 +11,7 @@
     "babel-plugin-styled-components": "^1.11.1",
     "eslint-plugin-prettier": "^3.1.4",
     "framer-motion": "^2.7.6",
+    "graphql-request": "^3.1.0",
     "i": "^0.3.6",
     "imagemin-optipng": "^8.0.0",
     "next": "9.5.3",
