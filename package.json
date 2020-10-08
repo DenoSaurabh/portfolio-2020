@@ -8,13 +8,25 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.2.2",
+    "@apollo/react-hooks": "^4.0.0",
+    "@apollo/react-ssr": "^4.0.0",
+    "apollo-boost": "^0.4.9",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "apollo-link-http": "^1.5.17",
+    "apollo-link-ws": "^1.0.20",
     "babel-plugin-styled-components": "^1.11.1",
     "eslint-plugin-prettier": "^3.1.4",
     "framer-motion": "^2.7.6",
+    "graphql": "^15.3.0",
     "graphql-request": "^3.1.0",
+    "graphql-tag": "^2.11.0",
     "i": "^0.3.6",
+    "isomorphic-unfetch": "^3.1.0",
     "next": "9.5.3",
     "next-pwa": "^3.1.5",
+    "next-with-apollo": "^5.1.0",
     "npm": "^6.14.8",
     "prettier": "^2.1.2",
     "react": "16.13.1",
@@ -22,6 +34,7 @@
     "react-dom": "16.13.1",
     "recoil": "0.0.13",
     "sass": "^1.26.11",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "subscriptions-transport-ws": "^0.9.18"
   }
 }

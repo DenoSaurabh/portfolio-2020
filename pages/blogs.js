@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { GraphQLClient } from 'graphql-request';
+import { useQuery } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
 
 import {
   ProjectIMG,
@@ -12,55 +13,51 @@ import { NeueLightMiniText } from '../styles/typography';
 
 import Page from '../components/page-hoc/page-hoc';
 
-const BlogsPage = ({ blogs }) => (
-  <Page
-    id="blogs"
-    title="Blogs"
-    metaName="denosaurabh blogs"
-    metaDe="denosaurabh portfolio medium blogs"
-  >
-    <SmallProjectsContent>
-      {blogs.map((el) => (
-        <Link href={el.blogUrl}>
-          <ProjectBox key={el.id}>
-            <ProjectIMG src={el.img.url} alt={el.img.fileName} />
-            <InlineStyle>
-              <NeueTertiaryHeading>{el.title}</NeueTertiaryHeading>
-              <NeueLightMiniText>{el.smallDescription} </NeueLightMiniText>
-            </InlineStyle>
-          </ProjectBox>
-        </Link>
-      ))}
-    </SmallProjectsContent>
-  </Page>
-);
-
-export async function getStaticProps() {
-  const graphcms = new GraphQLClient(
-    'https://api-eu-central-1.graphcms.com/v2/ckdb531gn4tu501z8cx2788ol/master'
-  );
-
-  const { blogs } = await graphcms.request(`
-      { 
-        blogs {
-            blogUrl
-            smallDescription
-            title
-            id
-            img {
-              fileName
-              url
-            }
-          }
-        }
+const BlogsPage = () => {
+  const GET_BLOGS = gql`
+    query GetBlogs {
+      blogs {
+        title
       }
-  `);
+    }
+  `;
 
-  return {
-    props: {
-      blogs,
-    },
-  };
-}
+  const { loading, error, blogs } = useQuery(GET_BLOGS);
+
+  console.log(loading, error, blogs);
+
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+
+  console.log(loading, error, blogs);
+
+  return <h1>{blogs}</h1>;
+};
+
+/*
+
+
+<Page
+      id="blogs"
+      title="Blogs"
+      metaName="denosaurabh blogs"
+      metaDe="denosaurabh portfolio medium blogs"
+    >
+      <SmallProjectsContent>
+        {blogs.map((el) => (
+          <Link href={el.blogUrl}>
+            <ProjectBox key={el.id}>
+              <ProjectIMG src={el.img.url} alt={el.img.fileName} />
+              <InlineStyle>
+                <NeueTertiaryHeading>{el.title}</NeueTertiaryHeading>
+                <NeueLightMiniText>{el.smallDescription} </NeueLightMiniText>
+              </InlineStyle>
+            </ProjectBox>
+          </Link>
+        ))}
+      </SmallProjectsContent>
+    </Page>
+
+*/
 
 export default BlogsPage;

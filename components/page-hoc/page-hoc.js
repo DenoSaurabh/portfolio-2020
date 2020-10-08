@@ -10,7 +10,15 @@ import {
 
 import CustomCursor from '../../components/cursor/CustomCursor';
 
-const Page = ({ id, metaName, metaDes, title, children }) => (
+const Page = ({
+  id,
+  metaName,
+  metaDes,
+  title,
+  children,
+  nextPageLink,
+  nextPageTitle,
+}) => (
   <PageS
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -23,8 +31,19 @@ const Page = ({ id, metaName, metaDes, title, children }) => (
       <meta name={metaName} content={metaDes} />
     </Head>
     <CustomCursor />
-    <NeueUBoldMediumSmallText>
+    <NeueUBoldMediumSmallText
+      style={{
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'space-between',
+      }}
+    >
       <Link href="/">denosaurabh.</Link>
+      <Link href={nextPageLink}>
+        <a>
+          <u>{nextPageTitle}</u>
+        </a>
+      </Link>
     </NeueUBoldMediumSmallText>
     <AquireSecondaryHeading>{title}</AquireSecondaryHeading>
     {children}

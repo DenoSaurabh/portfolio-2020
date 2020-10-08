@@ -56,11 +56,3 @@ export default function Home() {
     </div>
   );
 }
-
-/*
-
-----------------------------------------------------
-PROJECT BOX INVISIBLE HOVER EFFECT
-----------------------------------------------
-
-*/

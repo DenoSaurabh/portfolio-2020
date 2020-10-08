@@ -22,10 +22,11 @@ import {
 } from '../styles/typography';
 
 import CustomCursor from '../components/cursor/CustomCursor';
+import Page from '../components/page-hoc/page-hoc';
 
 import { useCursor } from '../state/cursor.recoil';
 
-const BlogsPage = () => {
+const AboutPage = () => {
   const { updateCursorStatus } = useCursor();
 
   useEffect(() => {
@@ -33,42 +34,15 @@ const BlogsPage = () => {
   }, []);
 
   return (
-    <AboutPageS
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.7 }}
-      key="about"
+    <Page
+      id="about"
+      title="About"
+      metaName="about denosaurabh"
+      metaDes="how denosaurabh solve problem, denosaurabh contact"
+      nextPageTitle="blogs"
+      nextPageLink="/blogs"
     >
-      <Head>
-        <title>about - denosaurabh</title>
-        <meta
-          name="about denosaurabh"
-          content="All about denosaurabh, how he think and design."
-        />
-      </Head>
-      <CustomCursor />
-      <NeueUBoldMediumSmallText
-        style={{
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'space-between',
-        }}
-      >
-        <Link href="/">denosaurabh.</Link>
-        <Link href="/blogs">
-          <a>
-            <u>blogs</u>
-          </a>
-        </Link>
-      </NeueUBoldMediumSmallText>
-      <AquireSecondaryHeading>About</AquireSecondaryHeading>
-      <AboutContent
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
-      >
+      <AboutContent>
         <LeftContent>
           <NeueLightMiniText style={{ marginBottom: '30px' }}>
             Hi, I am Saurabh. I’m a self taught Frontend developer, backend
@@ -244,8 +218,8 @@ const BlogsPage = () => {
           </SocialBox>
         </RightContent>
       </AboutContent>
-    </AboutPageS>
+    </Page>
   );
 };
 
-export default BlogsPage;
+export default AboutPage;
