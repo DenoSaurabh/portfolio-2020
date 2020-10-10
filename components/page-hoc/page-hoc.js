@@ -39,7 +39,7 @@ const Page = ({
       }}
     >
       <Link href="/">denosaurabh.</Link>
-      <Link href={nextPageLink}>
+      <Link href={nextPageLink || '/'}>
         <a>
           <u>{nextPageTitle}</u>
         </a>

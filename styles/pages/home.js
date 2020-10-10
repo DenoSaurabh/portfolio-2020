@@ -9,6 +9,8 @@ export const HomePageS = styled.div`
 
   grid-template-rows: minmax(min-content, auto) 1fr minmax(min-content, auto);
   grid-template-columns: 1fr;
+
+  overflow: hidden;
 `;
 
 export const ContentS = styled(motion.div)`
