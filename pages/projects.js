@@ -124,16 +124,14 @@ const ProjectsPage = () => (
         title="Card Game"
         projectUrl="https://heuristic-goldwasser-31429c.netlify.app"
       >
-        is my old javascript project I made to refine my programming knowledge.
+        is a design project made with SASS and advance concepts of css. is my
+        first ReactJS project I made, even before I learned the Course.
       </ProjectBox>
       <ProjectBox
         imgName="stone-paper-scissor"
         title="Stone Paper Scissor"
         projectUrl="https://thirsty-heisenberg-ba589f.netlify.app/"
-      >
-        is a design project made with SASS and advance concepts of css. is my
-        first ReactJS project I made, even before I learned the Course.
-      </ProjectBox>
+      ></ProjectBox>
       <ProjectBox
         imgName="portfolio-1"
         title="Portfolio 1.0"

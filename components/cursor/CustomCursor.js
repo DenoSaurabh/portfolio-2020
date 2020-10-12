@@ -7,7 +7,7 @@ import { NeueLightMiniText } from '../../styles/typography';
 import { useCursor } from '../../state/cursor.recoil';
 
 const CustomCursor = () => {
-  const { cursorStatus } = useCursor();
+  const { cursorStatus, updateCursorStatus } = useCursor();
 
   const cursor = useRef(null);
 
@@ -20,6 +20,7 @@ const CustomCursor = () => {
   useEffect(() => {
     document.addEventListener('mousemove', onMouseMove);
     return () => {
+      updateCursorStatus(null)
       document.removeEventListener('mousemove', onMouseMove);
     };
   }, []);
@@ -27,7 +28,7 @@ const CustomCursor = () => {
   return (
     <CursorBox ref={cursor} className="cursor">
       <Cursor />
-      <AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
         {cursorStatus ? (
           <NeueLightMiniText
             key={1}

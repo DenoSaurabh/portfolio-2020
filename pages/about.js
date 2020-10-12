@@ -1,10 +1,11 @@
-import { useEffect } from 'react';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Head from 'next/head';
+import { useQuery } from '@apollo/react-hooks';
+import ReactMarkdown from 'react-markdown/with-html';
+import ReactHtmlParser from 'react-html-parser';
+
+import withApollo from '../lib/apollo';
 
 import {
-  AboutPageS,
   AboutContent,
   LeftContent,
   RightContent,
@@ -14,24 +15,24 @@ import {
 } from '../styles/pages/about';
 
 import {
-  AquireSecondaryHeading,
   NeueUBoldMediumSmallText,
   NeueLightMiniText,
   NeueLightSmallText,
   NeueSecondaryHeading,
 } from '../styles/typography';
 
-import CustomCursor from '../components/cursor/CustomCursor';
-import Page from '../components/page-hoc/page-hoc';
+import { GET_ABOUT } from '../apollo/about.queries';
+
+import Page from '../layouts/page/page';
 
 import { useCursor } from '../state/cursor.recoil';
 
 const AboutPage = () => {
   const { updateCursorStatus } = useCursor();
 
-  useEffect(() => {
-    return () => updateCursorStatus(null);
-  }, []);
+  const { loading, error, data: about } = useQuery(GET_ABOUT);
+
+  if (loading) return <h1>Loading</h1>;
 
   return (
     <Page
@@ -44,92 +45,17 @@ const AboutPage = () => {
     >
       <AboutContent>
         <LeftContent>
-          <NeueLightMiniText style={{ marginBottom: '30px' }}>
-            Hi, I am Saurabh. I’m a self taught Frontend developer, backend
-            developer and UI/UX designer. I love to create delightful web
-            experiences. My goal is to create fast, scalable, performant,
-            accessible web apps with outstanding UI/UX. I try to think out of
-            the box for new & innovate ideas that can solve gobal problems with
-            my knowledge and thinking. I am always hungry to learn more! I
-            believe my diverse experience and passion gives me a unique edge as
-            it allow me to deliberately make complex apps with new technologies.
-            My expetise is around web technologies. Other then this, I love
-            playing &nbsp;
-            <motion.span
-              onHoverStart={() =>
-                updateCursorStatus({
-                  text:
-                    "shhh! let's play some Minecraft: Strizer_, super secret!",
-                  alignment: 'left',
-                })
-              }
-              onHoverEnd={() => updateCursorStatus(null)}
-            >
-              video games
-            </motion.span>
-            , making digital arts and 3D modeling.
-          </NeueLightMiniText>
-          <NeueUBoldMediumSmallText
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onHoverStart={() =>
-              updateCursorStatus({
-                text:
-                  'Solving Problem is my favourite part while building an app!',
-                alignment: 'right',
-              })
-            }
-            onHoverEnd={() => updateCursorStatus(null)}
-            transition={{ duration: 0.5, delay: 1.5 }}
-          >
-            Problem Solving
-          </NeueUBoldMediumSmallText>
-          <NeueLightMiniText
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, delay: 1.5 }}
-            style={{ margin: '30px 0' }}
-          >
-            So, How I like to solve problems ? &nbsp;
-            <b>Let’s me explain by an example. </b> Some researches go to the
-            seas to collect oceanic climate data. And the problem is that
-            because of slow and unstable internet connectivity, they are unable
-            to send real time data to servers and often lose data because of no
-            internet. We have to make an app that can solve this massive
-            problem.
-            <SmallBoldText>1. Problem Indentification </SmallBoldText>
-            <b>context:</b> send Real time & completed data to server.
-            <br />
-            <b>issue:</b> unstable & slow internet connectivity.
-            <br />
-            <b>why:</b> It can help to make better & accurate research.
-            <SmallBoldText>2. Research </SmallBoldText>
-            Then I go to stackoverflow to find the solution of a problem,
-            because there can be already peoples who has solved that. If not,
-            this is more exciting. (let’s think this is not in StackOverFlow) I
-            reasrch more in this & discuss with my other peeps about this
-            problem. After research I found out that this is a offline database
-            & sync problem. Then my knowledge comes, I realised that MongoDB
-            Realm and Firebase can solve these problems. I research more in
-            these pros and cons and which can make better project. (Secret: most
-            of my solutions comes at while I am going to sleep at night and in
-            evening walk. )<SmallBoldText>3. Pseudocode </SmallBoldText>
-            Now, it’s time to think what will be the steps to solve this
-            problem, Not the final code, but just a pen and paper to think what
-            will be the strategy to approach this problem.
-            <SmallBoldText>4. Implementation </SmallBoldText>
-            Now, it’s time to write code. I write the actual code fast as
-            possible to show the working prototype and be confident and
-            it’works. It’s time to rest.
-            <SmallBoldText>5. Improve </SmallBoldText>
-            Now, the problem has been solved with code, I improve my code
-            structure as well as for performance with other goddies.
-            <br />
-            <br />
-            PROBLEM SOLVED!
-          </NeueLightMiniText>
+          {about.abouts.map(({ title, description }) => (
+            <div>
+              <NeueUBoldMediumSmallText>{title}</NeueUBoldMediumSmallText>
+              <br />
+              <NeueLightMiniText>
+                {ReactHtmlParser(description.html)}
+              </NeueLightMiniText>
+              <br />
+              <br />
+            </div>
+          ))}
         </LeftContent>
         &nbsp;
         <RightContent>
@@ -222,4 +148,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default withApollo({ ssr: true })(AboutPage);

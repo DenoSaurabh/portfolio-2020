@@ -15,7 +15,7 @@ import {
   NeueLightMiniText,
 } from '../../styles/typography';
 
-import CustomCursor from '../cursor/CustomCursor'
+import CustomCursor from '../../components/cursor/CustomCursor'
 
 const ProjectHOC = ({
   children,
