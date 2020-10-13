@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const HomePageS = styled.div`
+  position: relative;
+
   width: 100%;
   height: 100%;
 
@@ -37,6 +39,10 @@ export const ContentS = styled(motion.div)`
 
     @media (max-width: 900px) {
       top: 64%;
+    }
+
+    @media only screen and (max-height: 800px) {
+      top: 70%;
     }
   }
 

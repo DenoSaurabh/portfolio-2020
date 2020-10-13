@@ -14,6 +14,7 @@ export default function Home() {
       <Head>
         <title> denosaurabh </title>
         <link rel="icon" href="/favicon.ico" />
+
         <meta
           name="denosaurabh"
           content="denosaurabh portfolio, developer and designer."
