@@ -39,7 +39,7 @@ const Page = ({
         justifyContent: 'space-between',
       }}
     >
-      <Link href={previousPageLink || '/'}>denosaurabh.</Link>
+      <Link href={previousPageLink || '/'}>&larr; denosaurabh.</Link>
       <Link href={nextPageLink || '/'}>
         <a>
           <u>{nextPageTitle}</u>

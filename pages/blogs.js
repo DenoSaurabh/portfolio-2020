@@ -48,20 +48,4 @@ const BlogsPage = () => {
   );
 };
 
-/*
-
-
-          <Link href={el.blogUrl} key={i}>
-            <ProjectBox key={el.id}>
-              <ProjectIMG src={el.img.url} alt={el.img.fileName} />
-              <InlineStyle>
-                <NeueTertiaryHeading>{el.title}</NeueTertiaryHeading>
-                <NeueLightMiniText>{el.smallDescription} </NeueLightMiniText>
-              </InlineStyle>
-            </ProjectBox>
-          </Link>
-        ))}
-
-*/
-
 export default withApollo({ ssr: true })(BlogsPage);

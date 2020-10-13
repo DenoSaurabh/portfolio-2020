@@ -3,17 +3,15 @@ import Link from 'next/link';
 import { useQuery } from '@apollo/client';
 
 import withApollo from '../lib/apollo';
-import {
-  GET_SKILLS_SET
-} from '../apollo/skills.queries';
+import { GET_SKILLS_SET } from '../apollo/skills.queries';
 
 import {
   SkillsPageContent,
   LeftContent as LeftContentS,
   RightContent as RightContentS,
-  SkillsBox,
   TopContent,
   BottomContent as BottomContentS,
+  TopBox,
 } from '../styles/pages/skills';
 
 import {
@@ -21,7 +19,10 @@ import {
   NeueSecondaryHeading,
   NeueLightSmallText,
   NeueLightMiniText,
+  NeueUBoldSmallText,
 } from '../styles/typography';
+
+import SkillsBox from '../components/skills-box/skills-box';
 
 import Page from '../layouts/page/page';
 
@@ -97,63 +98,29 @@ function LeftContent() {
 }
 
 function RightContent() {
-  const {
-    loading,
-    error,
-    data,
-  } = useQuery(GET_SKILLS_SET);
+  const { loading, error, data } = useQuery(GET_SKILLS_SET);
 
   if (loading) return <h1>loading</h1>;
 
-  const {frontEndSkills, backEndSkills, UIUXSkills} = data;
+  const { frontEndSkills, backEndSkills, UIUXSkills } = data;
 
   return (
     <RightContentS>
-      <SkillsBox>
-        {frontEndSkills.skills.map((el, i) => {
-          return (
-            <NeueLightMiniText
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 + 0.3 * i }}
-              key={i}
-            >
-              {el}
-            </NeueLightMiniText>
-          );
-        })}
-      </SkillsBox>
-      <SkillsBox>
-        {backEndSkills.skills.map((el, i) => {
-          return (
-            <NeueLightMiniText
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 + 0.3 * i }}
-              key={i}
-            >
-              {el}
-            </NeueLightMiniText>
-          );
-        })}
-      </SkillsBox>
-      <SkillsBox>
-        {UIUXSkills.skills.map((el, i) => (
-          <NeueLightMiniText
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 + 0.3 * i }}
-            key={i}
-          >
-            {el}
-          </NeueLightMiniText>
-        ))}
-      </SkillsBox>
+      <TopBox>
+        <SkillsBox arr={frontEndSkills.skills.slice(0, 9)} />
+        <SkillsBox arr={backEndSkills.skills.slice(0, 9)} />
+        <SkillsBox arr={UIUXSkills.skills.slice(0, 9)} />
+      </TopBox>
+      <Link href="/technical-skills">
+        <NeueUBoldSmallText style={{ margin: '4rem 0 2rem 2rem' }}>
+          My Complete Technical Skills &rarr;
+        </NeueUBoldSmallText>
+      </Link>
     </RightContentS>
   );
 }
 
-function BottomContent() {
+function BottomContent() {  
   return (
     <BottomContentS>
       <NeueLightSmallText>

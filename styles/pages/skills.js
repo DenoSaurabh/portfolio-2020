@@ -39,6 +39,10 @@ export const BottomContent = styled.div`
   @media (max-width: 420px) {
     padding-left: 2rem;
   }
+
+  @media (max-width: 800px) {
+    padding-left: 0;
+  }
 `;
 
 export const LeftContent = styled(motion.div)`
@@ -51,7 +55,7 @@ export const LeftContent = styled(motion.div)`
   display: flex;
   flex-direction: column;
 
-  h3 {
+  h3:not(:last-child) {
     margin: 2rem 0;
   }
 `;
@@ -61,17 +65,11 @@ export const RightContent = styled.div`
   min-width: 350px;
 
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 `;
 
-export const SkillsBox = styled(motion.div)`
-  width: 120px;
-  min-width: 100px;
-  height: fit-content;
-
-  margin: 2rem;
-
-  p {
-    margin-bottom: 3rem;
-  }
+export const TopBox = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;

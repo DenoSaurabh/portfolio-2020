@@ -27,7 +27,11 @@ const ProjectsPage = () => {
     >
       <Grid>
         {data.mainProjects.map(
-          ({ id, title, smallDescription, img, row, column, appKey }, i, arr) => (
+          (
+            { id, title, smallDescription, img, row, column, appKey },
+            i,
+            arr
+          ) => (
             <ContentBox
               key={id}
               imgUrl={img.url}
@@ -35,8 +39,6 @@ const ProjectsPage = () => {
               title={title}
               column={column}
               appKey={appKey}
-              nextProjectAppKey={arr[i+1]?.appKey}
-              nextProjectName={arr[i+1]?.title}
               row={row}
             >
               {smallDescription}
@@ -46,7 +48,7 @@ const ProjectsPage = () => {
       </Grid>
       <Grid>
         {data.smallProjects.map(
-          ({ id, title, smallDescription, img, appKey }) => (
+          ({ id, title, smallDescription, img, appKey }, i, arr) => (
             <ContentBox
               key={id}
               imgUrl={img.url}
@@ -70,17 +72,19 @@ const ProjectsPage = () => {
         </NeueLightSmallText>
       </div>
       <Grid>
-        {data.archivedProjects.map(({ id, title, smallDescription, img, projectUrl }) => (
-          <ContentBox
-            key={id}
-            imgUrl={img.url}
-            imgName={img.fileName}
-            title={title}
-            url={projectUrl}
-          >
-            {smallDescription}
-          </ContentBox>
-        ))}
+        {data.archivedProjects.map(
+          ({ id, title, smallDescription, img, projectUrl }) => (
+            <ContentBox
+              key={id}
+              imgUrl={img.url}
+              imgName={img.fileName}
+              title={title}
+              url={projectUrl}
+            >
+              {smallDescription}
+            </ContentBox>
+          )
+        )}
       </Grid>
     </Page>
   );

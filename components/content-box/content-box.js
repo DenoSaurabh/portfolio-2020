@@ -34,7 +34,18 @@ const ContentBox = ({
       row={row}
       column={column}
     >
-      <Link href={appKey ? `projects/${appKey}` : url ? url : ''}>
+      <Link
+        href={
+          appKey
+            ? {
+                pathname: '/projects/[id]',
+                query: { id: appKey },
+              }
+            : url
+            ? url
+            : ''
+        }
+      >
         <a>
           <ProjectIMG
             initial={{ opacity: 0 }}

@@ -16,7 +16,7 @@ import { NeueLightMiniText } from '../../styles/typography';
 
 import Page from '../../layouts/page/page';
 
-const ProjectHOC = ({}) => {
+const ProjectHOC = () => {
   const router = useRouter();
   const { id } = router.query;
   console.log(id);
@@ -33,10 +33,10 @@ const ProjectHOC = ({}) => {
   `;
 
   const { loading, error, data } = useQuery(GET_PROJECT);
-  console.log(data, error)
+  console.log(data, error);
 
   if (loading) return <h1>loading</h1>;
-  if (error || !data.project) return <h1>Error! not found</h1>
+  if (error || !data.project) return <h1>Error! not found</h1>;
 
   const { projectUrl, longDescription, githubUrl, title } = data.project;
   console.log(data);
@@ -47,8 +47,8 @@ const ProjectHOC = ({}) => {
       title={title}
       metaName="projects denosaurabh"
       metaDes="projects made by denosaurabh in web development"
-      nextPageLink="/skills"
-      nextPageTitle="skills"
+      nextPageLink={`/projects`}
+      nextPageTitle={'Projects'}
       previousPageLink="/projects"
     >
       <ProjectInfoContent>

@@ -16,18 +16,21 @@ export const GET_SKILLS_SET = gql`
       id
       skills
       type
+      skillgroup
     }
 
     backEndSkills: skillSet(where: { type: "Backend Developer" }) {
       id
       skills
       type
+      skillgroup
     }
 
     UIUXSkills: skillSet(where: { type: "UI/UX Designer" }) {
       id
       skills
       type
+      skillgroup
     }
   }
 `;
