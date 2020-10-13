@@ -102,7 +102,7 @@ const AboutPage = () => {
               onHoverStart={() =>
                 updateCursorStatus({
                   text:
-                    'denosaurabh #5404. I am most active on discord, chatting daily with other developer communities.',
+                    'denosaurabh 🎃 #5404. I am most active on discord, chatting daily with other developer communities.',
                   alignment: 'left',
                 })
               }

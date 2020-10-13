@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Head from 'next/head';
 
-import { PageS } from '../../styles/components/page-hoc';
+import { PageS } from '../../styles/components/page';
 
 import {
   AquireSecondaryHeading,
@@ -18,6 +18,7 @@ const Page = ({
   children,
   nextPageLink,
   nextPageTitle,
+  previousPageLink,
 }) => (
   <PageS
     initial={{ opacity: 0 }}
@@ -38,7 +39,7 @@ const Page = ({
         justifyContent: 'space-between',
       }}
     >
-      <Link href="/">denosaurabh.</Link>
+      <Link href={previousPageLink || '/'}>denosaurabh.</Link>
       <Link href={nextPageLink || '/'}>
         <a>
           <u>{nextPageTitle}</u>

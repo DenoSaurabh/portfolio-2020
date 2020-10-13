@@ -20,7 +20,7 @@ const CustomCursor = () => {
   useEffect(() => {
     document.addEventListener('mousemove', onMouseMove);
     return () => {
-      updateCursorStatus(null)
+      // updateCursorStatus(null)
       document.removeEventListener('mousemove', onMouseMove);
     };
   }, []);

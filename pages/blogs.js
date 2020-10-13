@@ -3,17 +3,19 @@ import Link from 'next/link';
 import { useQuery } from '@apollo/react-hooks';
 
 import withApollo from '../lib/apollo';
-import { GET_BLOGS } from '../apollo/blogs.queries'
+import { GET_BLOGS } from '../apollo/blogs.queries';
 
 import {
   ProjectIMG,
   InlineStyle,
   SmallProjectsContent,
-  ProjectBox,
+  // ProjectBox,
 } from '../styles/pages/blogs';
 
 import { NeueTertiaryHeading, NeueLightMiniText } from '../styles/typography';
 
+import Grid from '../components/grid/grid';
+import ContentBox from '../components/content-box/content-box';
 import Page from '../layouts/page/page';
 
 const BlogsPage = () => {
@@ -29,8 +31,26 @@ const BlogsPage = () => {
       metaName="denosaurabh blogs"
       metaDes="denosaurabh portfolio medium blogs"
     >
-      <SmallProjectsContent>
-        {data.blogs.map((el, i) => (
+      <Grid>
+        {data.blogs.map(({ blogUrl, id, img, title, smallDescription }, i) => (
+          <ContentBox
+            url={blogUrl}
+            key={id}
+            title={title}
+            imgName={img.fileName}
+            imgUrl={img.url}
+          >
+            {smallDescription}
+          </ContentBox>
+        ))}
+      </Grid>
+    </Page>
+  );
+};
+
+/*
+
+
           <Link href={el.blogUrl} key={i}>
             <ProjectBox key={el.id}>
               <ProjectIMG src={el.img.url} alt={el.img.fileName} />
@@ -41,9 +61,7 @@ const BlogsPage = () => {
             </ProjectBox>
           </Link>
         ))}
-      </SmallProjectsContent>
-    </Page>
-  );
-};
+
+*/
 
 export default withApollo({ ssr: true })(BlogsPage);

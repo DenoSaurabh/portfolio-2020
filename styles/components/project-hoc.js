@@ -20,6 +20,17 @@ export const ProjectInfoContent = styled.div`
     padding: 1rem;
 
     margin: 4rem 0;
+
+    img {
+      width: 100%;
+      height: 50rem;
+
+      background-position: top;
+      /* background-size: fill; */
+      object-fit: cover;
+
+      margin-bottom: 2rem;
+    }
   }
 
   b {
@@ -67,7 +78,7 @@ export const LinkButton = styled.button`
 
   background-color: #2a2b2e;
 
-  a {
+  p {
     color: white;
   }
 

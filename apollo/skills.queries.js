@@ -10,29 +10,21 @@ Main SkillSets are:
 
 */
 
-export const GET_FRONTEND_SKILLS = gql`
+export const GET_SKILLS_SET = gql`
   {
-    skillSet(where: { skillgroup: frontend_developer }) {
+    frontEndSkills: skillSet(where: { type: "Frontend Developer" }) {
       id
       skills
       type
     }
-  }
-`;
 
-export const GET_BACKEND_SKILLS = gql`
-  {
-    skillSet(where: { skillgroup: backend_developer }) {
+    backEndSkills: skillSet(where: { type: "Backend Developer" }) {
       id
       skills
       type
     }
-  }
-`;
 
-export const GET_UIUX_SKILLS = gql`
-  {
-    skillSet(where: { skillgroup: uiORux_designer }) {
+    UIUXSkills: skillSet(where: { type: "UI/UX Designer" }) {
       id
       skills
       type

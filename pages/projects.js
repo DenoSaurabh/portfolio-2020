@@ -1,158 +1,89 @@
 import Link from 'next/link';
-import Head from 'next/head';
+import { useQuery } from '@apollo/react-hooks';
 
-import {
-  ProjectsPageS,
-  BigProjectsContent,
-  CRWNApp,
-  NatoursAPI,
-  ProjectIMG,
-  SmallProjectsContent,
-  InlineStyle,
-} from '../styles/pages/projects';
+import { NeuePrimaryHeading, NeueLightSmallText } from '../styles/typography';
 
-import {
-  AquireSecondaryHeading,
-  AquireTertiaryHeading,
-  NeueUBoldMediumSmallText,
-  NeueTertiaryHeading,
-  NeueLightMiniText,
-} from '../styles/typography';
+import withApollo from '../lib/apollo';
+import { GET_PROJECTS } from '../apollo/projects.queries';
 
-import ProjectBox from '../components/project-box/project-box';
-import CustomCursor from '../components/cursor/CustomCursor';
+import ContentBox from '../components/content-box/content-box';
+import Grid from '../components/grid/grid';
 
-const ProjectsPage = () => (
-  <ProjectsPageS
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-  >
-    <Head>
-      <title>projects - denosaurabh</title>
-      <meta
-        name="denosaurabh projects"
-        content="Projects made by denosaurabh"
-      />
-    </Head>
-    <CustomCursor />
-    <NeueUBoldMediumSmallText
-      style={{
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'space-between',
-      }}
+import Page from '../layouts/page/page';
+
+const ProjectsPage = () => {
+  const { loading, error, data } = useQuery(GET_PROJECTS);
+
+  if (loading) return <h1>loading</h1>;
+
+  return (
+    <Page
+      id="projects"
+      title="Projects"
+      metaName="projects denosaurabh"
+      metaDes="projects made by denosaurabh in web development"
+      nextPageLink="/skills"
+      nextPageTitle="skills"
     >
-      <Link href="/">denosaurabh.</Link>
-      <Link href="/skills">
-        <a>
-          <u>skills</u>
-        </a>
-      </Link>
-    </NeueUBoldMediumSmallText>
-    <AquireSecondaryHeading>Projects</AquireSecondaryHeading>
-    <BigProjectsContent>
-      <CRWNApp>
-        <Link href="/projects/crwn-app">
-          <a>
-            <ProjectIMG src="/assets/img/projects/crwnapp.png" alt="crwn-app" />
-          </a>
-        </Link>
-        <InlineStyle>
-          <NeueTertiaryHeading>CRWN Project</NeueTertiaryHeading>
-          <NeueLightMiniText>
-            is a ecommerce project made with react, firebase.
-          </NeueLightMiniText>
-        </InlineStyle>
-      </CRWNApp>
-      <NatoursAPI>
-        <Link href="/projects/natours-api">
-          <a>
-            <ProjectIMG
-              src="/assets/img/projects/natours-api.png"
-              alt="natours-api"
-            />
-          </a>
-        </Link>
-        <InlineStyle>
-          <NeueTertiaryHeading>Natours API</NeueTertiaryHeading>
-          <NeueLightMiniText>
-            is a Rest API made with NodeJS, Express, MongoDB & Mongoose, for
-            booking nature tours.
-          </NeueLightMiniText>
-        </InlineStyle>
-      </NatoursAPI>
-    </BigProjectsContent>
-    <SmallProjectsContent>
-      <ProjectBox
-        imgName="walkie-talkie"
-        title="Walkie Talkie"
-        projectUrl="walkie-talkie"
-        i={1}
-      >
-        is a real-time chat application project made with vue, firebase.
-      </ProjectBox>
-      <ProjectBox imgName="natours" title="Natours" projectUrl="natours" i={2}>
-        is a design project made with SASS and advance concepts of css.
-      </ProjectBox>
-      <ProjectBox
-        imgName="trello"
-        title="Trello Hotel"
-        projectUrl="trello"
-        i={3}
-      >
-        is a design project powered with Advance CSS and Flexbox.
-      </ProjectBox>
-      <ProjectBox
-        imgName="self-driving-car"
-        title="Self Driving Car"
-        projectUrl="self-driving-car"
-        i={4}
-      >
-        is a personal project I made for a science/tech exibition.
-      </ProjectBox>
-    </SmallProjectsContent>
-    <AquireTertiaryHeading>Archived Projects</AquireTertiaryHeading>
-    &nbsp; &nbsp;
-    <NeueLightMiniText style={{ width: '50%', minWidth: '300px' }}>
-      Want to know some of my oldest projects when I was getting into
-      programming, let’s check out :D
-    </NeueLightMiniText>
-    <SmallProjectsContent>
-      <ProjectBox
-        imgName="card-game"
-        title="Card Game"
-        projectUrl="https://heuristic-goldwasser-31429c.netlify.app"
-      >
-        is a design project made with SASS and advance concepts of css. is my
-        first ReactJS project I made, even before I learned the Course.
-      </ProjectBox>
-      <ProjectBox
-        imgName="stone-paper-scissor"
-        title="Stone Paper Scissor"
-        projectUrl="https://thirsty-heisenberg-ba589f.netlify.app/"
-      ></ProjectBox>
-      <ProjectBox
-        imgName="portfolio-1"
-        title="Portfolio 1.0"
-        projectUrl="https://portfolio-u6s9.onrender.com/"
-      >
-        is my first portfolio I made last year.
-      </ProjectBox>
-      <ProjectBox
-        imgName="notes-app"
-        title="Notes App"
-        projectUrl="https://github.com/DenoSaurabh/notes-app"
-      >
-        is my move to make classic notes app with HTML, CSS and JS to refine my
-        programming knowledge in early days.
-      </ProjectBox>
-      <ProjectBox imgName="quiz-app" title="Quiz App" projectUrl="">
-        is also a HTML, CSS and JS project in my early days. This was very
-        deliberation for me.
-      </ProjectBox>
-    </SmallProjectsContent>
-  </ProjectsPageS>
-);
+      <Grid>
+        {data.mainProjects.map(
+          ({ id, title, smallDescription, img, row, column, appKey }, i, arr) => (
+            <ContentBox
+              key={id}
+              imgUrl={img.url}
+              imgName={img.fileName}
+              title={title}
+              column={column}
+              appKey={appKey}
+              nextProjectAppKey={arr[i+1]?.appKey}
+              nextProjectName={arr[i+1]?.title}
+              row={row}
+            >
+              {smallDescription}
+            </ContentBox>
+          )
+        )}
+      </Grid>
+      <Grid>
+        {data.smallProjects.map(
+          ({ id, title, smallDescription, img, appKey }) => (
+            <ContentBox
+              key={id}
+              imgUrl={img.url}
+              imgName={img.fileName}
+              appKey={appKey}
+              title={title}
+            >
+              {smallDescription}
+            </ContentBox>
+          )
+        )}
+      </Grid>
+      <div style={{ width: '80%', margin: '0 auto' }}>
+        <NeuePrimaryHeading>Archived Projects</NeuePrimaryHeading>
+        &nbsp; &nbsp;
+        <NeueLightSmallText
+          style={{ width: '50%', minWidth: '300px', lineHeight: '26px' }}
+        >
+          Want to know some of my oldest projects when I was getting into
+          programming, let’s check out: D
+        </NeueLightSmallText>
+      </div>
+      <Grid>
+        {data.archivedProjects.map(({ id, title, smallDescription, img, projectUrl }) => (
+          <ContentBox
+            key={id}
+            imgUrl={img.url}
+            imgName={img.fileName}
+            title={title}
+            url={projectUrl}
+          >
+            {smallDescription}
+          </ContentBox>
+        ))}
+      </Grid>
+    </Page>
+  );
+};
 
-export default ProjectsPage;
+export default withApollo({ ssr: true })(ProjectsPage);

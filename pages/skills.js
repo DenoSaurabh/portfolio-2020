@@ -4,9 +4,7 @@ import { useQuery } from '@apollo/client';
 
 import withApollo from '../lib/apollo';
 import {
-  GET_FRONTEND_SKILLS,
-  GET_BACKEND_SKILLS,
-  GET_UIUX_SKILLS,
+  GET_SKILLS_SET
 } from '../apollo/skills.queries';
 
 import {
@@ -100,27 +98,19 @@ function LeftContent() {
 
 function RightContent() {
   const {
-    loading: loadingFrontEnd,
-    error: frontendQueryError,
-    data: frontEndSkills,
-  } = useQuery(GET_FRONTEND_SKILLS);
-  const {
-    loading: loadingBackEnd,
-    error: backendQueryError,
-    data: backEndSkills,
-  } = useQuery(GET_BACKEND_SKILLS);
-  const {
-    loading: loadingUIUX,
-    error: UIUXQueryError,
-    data: UIUXSkills,
-  } = useQuery(GET_UIUX_SKILLS);
+    loading,
+    error,
+    data,
+  } = useQuery(GET_SKILLS_SET);
 
-  if (loadingFrontEnd || loadingBackEnd || loadingUIUX) return <h1>loading</h1>;
+  if (loading) return <h1>loading</h1>;
+
+  const {frontEndSkills, backEndSkills, UIUXSkills} = data;
 
   return (
     <RightContentS>
       <SkillsBox>
-        {frontEndSkills.skillSet.skills.map((el, i) => {
+        {frontEndSkills.skills.map((el, i) => {
           return (
             <NeueLightMiniText
               initial={{ opacity: 0 }}
@@ -134,7 +124,7 @@ function RightContent() {
         })}
       </SkillsBox>
       <SkillsBox>
-        {backEndSkills.skillSet.skills.map((el, i) => {
+        {backEndSkills.skills.map((el, i) => {
           return (
             <NeueLightMiniText
               initial={{ opacity: 0 }}
@@ -148,7 +138,7 @@ function RightContent() {
         })}
       </SkillsBox>
       <SkillsBox>
-        {UIUXSkills.skillSet.skills.map((el, i) => (
+        {UIUXSkills.skills.map((el, i) => (
           <NeueLightMiniText
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

@@ -1,19 +1,13 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-
-const ProjectMediaQuery = `
-    @media (max-width: 470px) {
-        min-width: 300px;
-        align-self: center;
-    }
-`;
-
 export const ProjectBoxS = styled(motion.div)`
-  flex: 40%;
-
-  height: 40rem;
-
-  margin: 5rem;
+  ${({ row, column }) =>
+    row && column
+      ? `
+    grid-row: ${row};
+    grid-column: ${column};
+  `
+      : ''}
 
   overflow: hidden;
 `;
@@ -38,4 +32,6 @@ export const InlineStyle = styled.div`
   h3 {
     padding-right: 1rem;
   }
+
+  padding-bottom: 2rem;
 `;
