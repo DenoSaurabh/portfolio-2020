@@ -16,6 +16,8 @@ const ProjectsPage = () => {
 
   if (loading) return <h1>loading</h1>;
 
+  const { mainProjects, smallProjects, archivedProjects } = data;
+
   return (
     <Page
       id="projects"
@@ -26,12 +28,8 @@ const ProjectsPage = () => {
       nextPageTitle="skills"
     >
       <Grid>
-        {data.mainProjects.map(
-          (
-            { id, title, smallDescription, img, row, column, appKey },
-            i,
-            arr
-          ) => (
+        {mainProjects.map(
+          ({ id, title, smallDescription, img, row, column, appKey }) => (
             <ContentBox
               key={id}
               imgUrl={img.url}
@@ -40,26 +38,26 @@ const ProjectsPage = () => {
               column={column}
               appKey={appKey}
               row={row}
-            >
+              projectId={id}
+              >
               {smallDescription}
             </ContentBox>
           )
         )}
       </Grid>
       <Grid>
-        {data.smallProjects.map(
-          ({ id, title, smallDescription, img, appKey }, i, arr) => (
-            <ContentBox
-              key={id}
-              imgUrl={img.url}
-              imgName={img.fileName}
-              appKey={appKey}
-              title={title}
-            >
-              {smallDescription}
-            </ContentBox>
-          )
-        )}
+        {smallProjects.map(({ id, title, smallDescription, img, appKey }) => (
+          <ContentBox
+            key={id}
+            projectId={id}
+            imgUrl={img.url}
+            imgName={img.fileName}
+            appKey={appKey}
+            title={title}
+          >
+            {smallDescription}
+          </ContentBox>
+        ))}
       </Grid>
       <div style={{ width: '80%', margin: '0 auto' }}>
         <NeuePrimaryHeading>Archived Projects</NeuePrimaryHeading>
@@ -72,7 +70,7 @@ const ProjectsPage = () => {
         </NeueLightSmallText>
       </div>
       <Grid>
-        {data.archivedProjects.map(
+        {archivedProjects.map(
           ({ id, title, smallDescription, img, projectUrl }) => (
             <ContentBox
               key={id}

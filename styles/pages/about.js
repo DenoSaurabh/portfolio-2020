@@ -25,9 +25,18 @@ export const AboutContent = styled(motion.div)`
 
 export const LeftContent = styled(motion.div)`
   flex-basis: 50%;
+
   min-width: 250px;
 
   height: 100%;
+
+  @media (max-width: 561px) {
+    flex-basis: 90%;
+
+    div {
+      width: 100%;
+    }
+  }
 `;
 
 export const RightContent = styled(motion.div)`

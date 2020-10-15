@@ -12,7 +12,6 @@ export const SkillsBoxS = styled(motion.div)`
   display: flex;
   flex-direction: column;
   flex-wrap: ${({ flexWrap }) => {
-    console.log(flexWrap);
     return flexWrap ? 'wrap' : 'unset';
   }};
 

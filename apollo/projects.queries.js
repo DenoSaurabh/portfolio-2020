@@ -7,6 +7,7 @@ export const GET_PROJECTS = gql`
       title
       id
       smallDescription
+      archived
       img {
         url
         fileName
@@ -19,6 +20,7 @@ export const GET_PROJECTS = gql`
       title
       id
       smallDescription
+      archived
       img {
         url
         fileName
@@ -29,6 +31,7 @@ export const GET_PROJECTS = gql`
       id
       smallDescription
       projectUrl
+      archived
       img {
         url
         fileName

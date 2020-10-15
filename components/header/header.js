@@ -18,7 +18,6 @@ const Header = () => {
   const { loading, error, data } = useQuery(GET_DENOSAURABH);
 
   if (loading) {
-    console.log('loading');
     return (
       <HeaderS>
         <NeueUBoldMediumSmallText>loading</NeueUBoldMediumSmallText>
@@ -26,18 +25,26 @@ const Header = () => {
     );
   }
 
-  const { name, event } = data.denosaurabh;
+  const { name, season, currentStatus } = data.denosaurabh;
 
   return (
     <HeaderS>
       <NeueUBoldMediumSmallText
         onHoverStart={() =>
           updateCursorStatus({
-            text: 'My main Identity on most platforms!',
+            text: currentStatus,
             alignment: 'right',
           })
         }
         onHoverEnd={() => updateCursorStatus(null)}
+        onTapStart={() =>
+          updateCursorStatus({
+            text: currentStatus,
+            alignment: 'right',
+          })
+        }
+        onTap={() => updateCursorStatus(null)}
+        onTapCancel={() => updateCursorStatus(null)}
       >
         {name}.
       </NeueUBoldMediumSmallText>
@@ -46,7 +53,7 @@ const Header = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
       >
-        {event}
+        {season}
       </NeueUBoldSmallText>
     </HeaderS>
   );

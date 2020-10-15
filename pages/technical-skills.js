@@ -39,9 +39,8 @@ const TechnicalSkills = () => {
       previousPageLink="/skills"
     >
       
-      {Object.keys(data).map((context) => {
-        console.log(context, data[context]);
-        const { skillgroup, type, skills } = data[context];
+      {Object.keys(data).map((key) => {
+        const { skillgroup, type, skills } = data[key];
 
         return (
           <SkillBlock key={skillgroup}>

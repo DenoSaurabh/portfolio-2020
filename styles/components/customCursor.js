@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+import { isMobile } from 'react-device-detect';
+
 export const CursorBox = styled(motion.div)`
   position: fixed;
 
@@ -32,6 +34,9 @@ export const CursorBox = styled(motion.div)`
 `;
 
 export const Cursor = styled(motion.div)`
+  position: relative;
+  overflow: hidden;
+
   background: #343333;
   background-blend-mode: difference;
 
@@ -41,4 +46,6 @@ export const Cursor = styled(motion.div)`
   transform: translateX(-50%) translateY(-50%);
 
   border-radius: 50%;
+
+  ${isMobile ? `visibility: hidden` : ''}
 `;

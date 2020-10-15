@@ -1,5 +1,5 @@
-import { useRecoilValue, useSetRecoilState, useResetRecoilState } from 'recoil';
-import { atom, selector } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { atom } from 'recoil';
 
 // This is the state for when you Hover ans specific element, it will show some text on cursor.
 const cursorState = atom({
