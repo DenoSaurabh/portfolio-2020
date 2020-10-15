@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { useQuery } from '@apollo/react-hooks';
-import ReactMarkdown from 'react-markdown/with-html';
 import ReactHtmlParser from 'react-html-parser';
 
 import withApollo from '../lib/apollo';
@@ -9,7 +8,6 @@ import {
   AboutContent,
   LeftContent,
   RightContent,
-  SmallBoldText,
   ChatsBox,
   SocialBox,
 } from '../styles/pages/about';
@@ -45,8 +43,8 @@ const AboutPage = () => {
     >
       <AboutContent>
         <LeftContent>
-          {about.abouts.map(({ title, description }) => (
-            <div>
+          {about.abouts.map(({ title, description }, i) => (
+            <div key={i}>
               <NeueUBoldMediumSmallText>{title}</NeueUBoldMediumSmallText>
               <br />
               <NeueLightMiniText>

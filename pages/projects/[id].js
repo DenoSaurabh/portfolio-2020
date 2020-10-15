@@ -104,6 +104,7 @@ const ProjectHOC = () => {
       nextPageLink={afterProjectAppKey}
       nextPageTitle={afterProjectTitle}
       previousPageLink="/projects"
+      className="page"
     >
       <ProjectInfoContent>
         <ButtonsBox>

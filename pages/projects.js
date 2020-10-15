@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { useQuery } from '@apollo/react-hooks';
 
 import { NeuePrimaryHeading, NeueLightSmallText } from '../styles/typography';

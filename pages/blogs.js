@@ -1,18 +1,8 @@
 import React from 'react';
-import Link from 'next/link';
 import { useQuery } from '@apollo/react-hooks';
 
 import withApollo from '../lib/apollo';
 import { GET_BLOGS } from '../apollo/blogs.queries';
-
-import {
-  ProjectIMG,
-  InlineStyle,
-  SmallProjectsContent,
-  // ProjectBox,
-} from '../styles/pages/blogs';
-
-import { NeueTertiaryHeading, NeueLightMiniText } from '../styles/typography';
 
 import Grid from '../components/grid/grid';
 import ContentBox from '../components/content-box/content-box';

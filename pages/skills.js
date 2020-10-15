@@ -18,7 +18,6 @@ import {
   NeuePrimaryHeading,
   NeueSecondaryHeading,
   NeueLightSmallText,
-  NeueLightMiniText,
   NeueUBoldSmallText,
 } from '../styles/typography';
 

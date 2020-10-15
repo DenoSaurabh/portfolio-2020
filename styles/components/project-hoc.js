@@ -6,6 +6,9 @@ export const ProjectInfoPageS = styled.div`
 `;
 
 export const ProjectInfoContent = styled.div`
+  position: relative;
+  overflow: hidden;
+
   width: 70%;
   height: fit-content;
 
@@ -67,9 +70,9 @@ export const ProjectIMG = styled.img`
 
 export const LinkButton = styled.button`
   max-width: 400px;
-  min-width: 200px;
+  width: 20rem;
+  min-width: 100px;
 
-  width: 20%;
 
   margin: 2rem;
   padding: 1.5rem 2rem;
@@ -88,4 +91,5 @@ export const LinkButton = styled.button`
 
 export const ButtonsBox = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;

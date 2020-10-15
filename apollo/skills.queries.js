@@ -33,11 +33,25 @@ export const GET_SKILLS_SET = gql`
       skillgroup
     }
 
-    mobileDeveloper: skillSet(where: { type: "Mobile Development (Experimental)" }) {
+    mobileDeveloper: skillSet(
+      where: { type: "Mobile Development (Experimental)" }
+    ) {
       id
       skills
       type
       skillgroup
+    }
+  }
+`;
+
+export const GET_ALL_SKILLS = gql`
+  {
+    skillsSet {
+      type
+      skills
+      skillgroup
+      display
+      id
     }
   }
 `;
