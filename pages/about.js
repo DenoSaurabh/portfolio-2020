@@ -1,8 +1,11 @@
 import Link from 'next/link';
 import { useQuery } from '@apollo/react-hooks';
 import ReactHtmlParser from 'react-html-parser';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import withApollo from '../lib/apollo';
+
+import { useAlert } from '../state/alert.recoil';
 
 import {
   AboutContent,
@@ -27,6 +30,7 @@ import { useCursor } from '../state/cursor.recoil';
 
 const AboutPage = () => {
   const { updateCursorStatus } = useCursor();
+  const { updateAlertStatus } = useAlert();
 
   const { loading, error, data: about } = useQuery(GET_ABOUT);
 
@@ -70,7 +74,12 @@ const AboutPage = () => {
             </NeueLightMiniText>
           </b>
           <br />
-          <NeueLightSmallText>denosaurabh@gmail.com</NeueLightSmallText>
+          <CopyToClipboard
+            text="denosaurabh@gmail.com"
+            onCopy={() => updateAlertStatus('Email copied!')}
+          >
+            <NeueLightSmallText>denosaurabh@gmail.com</NeueLightSmallText>
+          </CopyToClipboard>
 
           <ChatsBox>
             <NeueLightMiniText>
@@ -96,20 +105,23 @@ const AboutPage = () => {
                 <a>Twitter</a>
               </Link>
             </NeueLightMiniText>
-            <NeueLightMiniText
-              onHoverStart={() =>
-                updateCursorStatus({
-                  text:
-                    'denosaurabh 🎃 #5404. I am most active on discord, chatting daily with other developer communities.',
-                  alignment: 'left',
-                })
-              }
-              onHoverEnd={() => updateCursorStatus(null)}
+            <CopyToClipboard
+              text="denosaurabh 🎃 #5404"
+              onCopy={() => updateAlertStatus('Discord name copied!')}
             >
-              <Link href="https://discord.com">
-                <a>Discord</a>
-              </Link>
-            </NeueLightMiniText>
+              <NeueLightMiniText
+                onHoverStart={() =>
+                  updateCursorStatus({
+                    text:
+                      'denosaurabh 🎃 #5404. I am most active on discord, chatting daily with other developer communities.',
+                    alignment: 'left',
+                  })
+                }
+                onHoverEnd={() => updateCursorStatus(null)}
+              >
+                Discord
+              </NeueLightMiniText>
+            </CopyToClipboard>
           </ChatsBox>
           <b>
             <NeueLightMiniText>or follow me on &rarr;</NeueLightMiniText>

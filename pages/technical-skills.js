@@ -13,7 +13,7 @@ import SkillsBox from '../components/skills-box/skills-box';
 const SkillsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${({ width }) => (width === 'small' ? '50%' : '100%')}};
+  width: ${({ display }) => (display === 'small' ? '50%' : '100%')}};
 
   h3 {
     margin: 4rem 2rem;
@@ -38,7 +38,7 @@ const TechnicalSkills = () => {
 
   return (
     <Page
-      id="technical-skills"
+      id="technical skills"
       title="Technical Skills"
       metaName="complete skills denosaurabh"
       metaDes="full complete skills of denosaurabh"
@@ -47,7 +47,7 @@ const TechnicalSkills = () => {
       <TechnicalSkillsContent>
         {skillsSet.map(({ skillgroup, type, skills, display }) => {
           return (
-            <SkillsContainer key={skillgroup} width={display}>
+            <SkillsContainer key={skillgroup} display={display}>
               <NeueSecondaryHeading>{type}</NeueSecondaryHeading>
               <SkillsBox
                 height={display === 'small' ? 'fit-content' : '40rem'}
