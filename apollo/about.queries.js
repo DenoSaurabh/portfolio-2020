@@ -10,5 +10,12 @@ export const GET_ABOUT = gql`
         html
       }
     }
+
+    denosaurabh(where: { name: "denosaurabh" }) {
+      discord
+      resume {
+        url
+      }
+    }
   }
 `;

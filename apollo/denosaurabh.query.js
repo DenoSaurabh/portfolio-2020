@@ -6,6 +6,11 @@ export const GET_DENOSAURABH = gql`
       name
       season
       currentStatus
+      discord
+
+      resume {
+        url
+      }
     }
   }
 `;

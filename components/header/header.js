@@ -4,6 +4,8 @@ import { useQuery } from '@apollo/react-hooks';
 import { GET_DENOSAURABH } from '../../apollo/denosaurabh.query';
 import withApollo from '../../lib/apollo';
 
+import { useDenosaurabh } from '../../state/denosaurabh.recoil';
+
 import { HeaderS } from '../../styles/components/header.styles';
 import {
   NeueUBoldSmallText,
@@ -14,6 +16,7 @@ import { useCursor } from '../../state/cursor.recoil';
 
 const Header = () => {
   const { updateCursorStatus } = useCursor();
+  const { updateDenosaurabh } = useDenosaurabh();
 
   const { loading, error, data } = useQuery(GET_DENOSAURABH);
 
@@ -26,6 +29,7 @@ const Header = () => {
   }
 
   const { name, season, currentStatus } = data.denosaurabh;
+  updateDenosaurabh(data.denosaurabh);
 
   return (
     <HeaderS>

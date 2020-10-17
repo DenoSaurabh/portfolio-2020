@@ -32,9 +32,18 @@ const AboutPage = () => {
   const { updateCursorStatus } = useCursor();
   const { updateAlertStatus } = useAlert();
 
-  const { loading, error, data: about } = useQuery(GET_ABOUT);
+  const { loading, error, data } = useQuery(GET_ABOUT);
 
   if (loading) return <h1>Loading</h1>;
+
+  const {
+    discord,
+    resume: { url: resumeUrl },
+  } = data.denosaurabh;
+
+  const { abouts } = data;
+
+  // const discord = 'jbakdhhsd';
 
   return (
     <Page
@@ -47,7 +56,7 @@ const AboutPage = () => {
     >
       <AboutContent>
         <LeftContent>
-          {about.abouts.map(({ title, description }, i) => (
+          {abouts.map(({ title, description }, i) => (
             <div key={i}>
               <NeueUBoldMediumSmallText>{title}</NeueUBoldMediumSmallText>
               <br />
@@ -106,14 +115,13 @@ const AboutPage = () => {
               </Link>
             </NeueLightMiniText>
             <CopyToClipboard
-              text="denosaurabh 🎃 #5404"
+              text={discord}
               onCopy={() => updateAlertStatus('Discord name copied!')}
             >
               <NeueLightMiniText
                 onHoverStart={() =>
                   updateCursorStatus({
-                    text:
-                      'denosaurabh 🎃 #5404. I am most active on discord, chatting daily with other developer communities.',
+                    text: `${discord}. I am most active on discord, chatting daily with other developer communities.`,
                     alignment: 'left',
                   })
                 }
@@ -152,6 +160,9 @@ const AboutPage = () => {
               </Link>
             </NeueLightMiniText>
           </SocialBox>
+          {/* <a href={resumeUrl} target="_blank">
+            <NeueUBoldMediumSmallText>Resume</NeueUBoldMediumSmallText>
+          </a> */}
         </RightContent>
       </AboutContent>
     </Page>
