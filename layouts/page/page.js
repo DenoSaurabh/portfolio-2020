@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Head from 'next/head';
 
+import { PageS } from '../../styles/components/page';
+
 import {
   AquireSecondaryHeading,
   NeueUBoldMediumSmallText,
@@ -18,7 +20,6 @@ const Page = ({
   nextPageTitle,
   previousPageLink,
 }) => {
-
   return (
     <PageS
       initial={{ opacity: 0 }}
