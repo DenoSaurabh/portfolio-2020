@@ -58,7 +58,7 @@ body {
 
   padding: 4rem;
 
-  cursor: none !important;
+  // cursor: none !important;
 
   @media (max-width: 700px) {
     padding: 3rem;
@@ -80,7 +80,7 @@ a {
   color: #000;
   text-decoration: none;
 
-  cursor: none;
+  // cursor: none;
 }
 
 ::-moz-selection {

@@ -37,7 +37,7 @@ const SkillsBox = ({ arr, height, width, flexWrap }) => (
       <NeueLightMiniText
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1 + 0.3 * i }}
+        transition={{ delay: 1 + 0.2 * i }}
         key={i}
       >
         {el}

@@ -26,7 +26,7 @@ const CustomCursor = () => {
 
   return (
     <CursorBox ref={cursor} className="cursor">
-      <Cursor />
+      {/* <Cursor /> */}
       <AnimatePresence exitBeforeEnter>
         {cursorStatus ? (
           <NeueLightMiniText

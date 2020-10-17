@@ -47,5 +47,7 @@ export const Cursor = styled(motion.div)`
 
   border-radius: 50%;
 
-  ${isMobile ? `visibility: hidden` : ''}
+  /* ${isMobile ? `visibility: hidden` : ''} */
+
+  display: hidden;
 `;
