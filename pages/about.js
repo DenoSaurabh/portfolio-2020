@@ -43,8 +43,6 @@ const AboutPage = () => {
 
   const { abouts } = data;
 
-  // const discord = 'jbakdhhsd';
-
   return (
     <Page
       id="about"

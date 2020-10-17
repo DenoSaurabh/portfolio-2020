@@ -1,13 +1,5 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import { useQuery } from '@apollo/react-hooks';
-
-import { PageS } from '../../styles/components/page';
-
-import { GET_DENOSAURABH } from '../../apollo/denosaurabh.query';
-import withApollo from '../../lib/apollo';
-
-import { useDenosaurabh } from '../../state/denosaurabh.recoil';
 
 import {
   AquireSecondaryHeading,
@@ -26,18 +18,6 @@ const Page = ({
   nextPageTitle,
   previousPageLink,
 }) => {
-  const { updateDenosaurabh, denosaurabh } = useDenosaurabh();
-
-  // if (!denosaurabh) {
-  const { loading, error, data } = useQuery(GET_DENOSAURABH);
-
-  if (loading) {
-    console.log('querying denosaurabh');
-    return <NeueUBoldMediumSmallText>loading</NeueUBoldMediumSmallText>;
-  }
-
-  updateDenosaurabh(data.denosaurabh);
-  // }
 
   return (
     <PageS
@@ -72,4 +52,4 @@ const Page = ({
   );
 };
 
-export default withApollo({ ssr: true })(Page);
+export default Page;
