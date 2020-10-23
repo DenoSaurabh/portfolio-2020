@@ -1,3 +1,3 @@
 ## Portfolio 2020
 
-My current & next year Portfolio made with NextJS :D
+My current Portfolio made with NextJS & GraphQL :D
