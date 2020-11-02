@@ -23,10 +23,10 @@ Hi, I am Saurabh. I’m a self-taught Frontend developer, backend developer, and
 
 ## 📫&nbsp; Want to chat?
 
-Email - denosaurabh@gmail.com
-[Skype](https://join.skype.com/invite/b0duJveFed9U)! 
-[Twitter](https://twitter.com/denosaurabh)
-Hangout - denosaurabh
+* Email - denosaurabh@gmail.com
+* [Skype](https://join.skype.com/invite/b0duJveFed9U)
+* [Twitter](https://twitter.com/denosaurabh)
+* Hangout - denosaurabh
 
 
 ## 🐛&nbsp; Found a bug?
